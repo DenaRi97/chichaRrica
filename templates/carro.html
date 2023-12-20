@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="./css/carro.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Carrito de Compra</title>
+</head>
+<body>
+
+    <header id="main-header">
+        <div class="menu__icon">
+          <i class="fas fa-bars icon"></i>
+        </div>
+     
+        <!--Burger Menú-->
+        <input class="menu__btn" type="checkbox" id="menu__btn" />
+        <label class="menu__icon" for="menu__btn"><span class="navicon"></span> </label>  
+        <!--Menú-->
+    
+        <nav>
+          <a href="index.html" class="nav__logo logo">
+          <img id="logoPrincipal" src="./img/iconos/logoLetraBlanca.svg" alt="Logotipo Miguel Meixoeiro" class="hide-logo">
+          </a>
+          <ul>
+            <li><a href="#contacto" id="sliderRojo" class="toggle-logo">CONTACTO</a></li>
+            <li><a href="./templates/about.html">ABOUT</a></li>
+            <li><a href="./templates/gallery.html">GALERIA</a></li>
+            <li><a href="#acceso">ACCESO</a></li>
+            
+          </ul>
+        </nav>
+      </header>
+
+
+    <main class="gallery__container">
+        <section id="products__display" class="carrito-container">
+            <!-- Aqui deberia de añadirse el contenido de cada producto -->
+            <h2>Tu carrito de la compra</h2>
+            <p class="empty-cart-message">El carrito de la compra se encuentra vacío. Echale un vistazo a la galería.</p>
+            <button class="go-to-gallery-button">Ir a la Galería</button>
+        </section>
+    </main>
+    <script src="./js/carro.js"></script>
+    <script src="./js/scripJS.js"></script>
+</body>
+</html>

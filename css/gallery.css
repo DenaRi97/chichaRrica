@@ -1,140 +1,90 @@
-body {
-  overflow-x: hidden;
-  margin: 0;
-  overflow-y: auto;
+body{
+    overflow-x: hidden;
+    margin: 0;
+    overflow-y: auto;
 
-  background-color: #262726;
+    background-color: #262726;
 }
 
 /*Header*/
 
-header nav {
-  margin-bottom: -50px;
+header nav{
+    margin-bottom: -50px;
 }
 
 .nav__img-tamaño {
-  height: auto;
-  max-width: 11%;
-  cursor: pointer;
-}
+    height: auto;
+    max-width: 11%;
+    cursor: pointer;
+  }
 
-header ul {
-  font-size: 1.1em;
-}
-
-/*Filtros categorías*/
-
-.gallery_filter {
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  margin-top: 50px;
-}
-
-.gallery__buttonCategory {
-  background-color: #262726;
-  color: white;
-  border: white solid 1px;
-  min-width: 13%;
-  margin: auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-
-}
-
-
-.gallery__buttonCategory:hover {
-  font-weight: bolder;
-  border: white solid 2px;
-
-  display: flex;
-  align-items: center;
-
-
-}
-
-body {
-  overflow-x: hidden;
-  margin: 0;
-  overflow-y: auto;
-
-  background-color: #262726;
-}
-
-/* botones de filtros */
-
-
-
-
-/*Header*/
-
-header nav {
-  margin-bottom: -50px;
-}
-
-.nav__img-tamaño {
-  height: auto;
-  max-width: 11%;
-  cursor: pointer;
-}
-
-header ul {
-  font-size: 1.1em;
-}
+  header ul{
+    font-size: 1.1em;
+  }
 
 /*Filtros categorías*/
 
-.gallery_filter {
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  margin-top: 50px;
+.gallery_filter{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 50px;
 }
 
-.gallery__buttonCategory {
-  background-color: #262726;
-  color: white;
-  border: white solid 1px;
-  min-width: 13%;
-  margin: auto;
+.gallery__buttonCategory{
+    background-color: #262726;
+    color: white;
+    border: white solid 1px;
+    min-width: 13%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    
+}
+
+
+.gallery__buttonCategory:hover{
+    font-weight: bolder;
+    border: white solid 2px;
+    
+    display: flex;
+    align-items: center;
+
+   
+}
+
+.gallery_filtersSubCategory{
   display: flex;
   align-items: center;
-  justify-content: center;
-
-
-}
-
-
-.gallery__buttonCategory:hover {
-  font-weight: bolder;
-  border: white solid 2px;
-  display: flex;
-  align-items: center;
-
-
-}
-
-.gallery_filtersSubCategory {
-  display: flex;
   margin: auto;
   gap: 30px;
   height: 10%;
   background-color: #830c0c;
   padding: 1%;
   border-radius: 43px;
+    
 }
 
-.gallery__buttonSubCategory {
+.gallery__buttonSubCategory{
   background-color: #830c0c;
   color: white;
   border: #830c0c solid 0.5px;
   font-size: 0.8em;
   display: none;
+    
 }
+
+.gallery__buttonSubCategory:hover{
+    font-weight: bolder;
+    border: white solid 2px;
+    
+    display: flex;
+    align-items: center; 
+}
+
 .gallery_filtersSubCategory button a{
   /* background-color: #830c0c; */
   text-decoration: none;
@@ -145,6 +95,7 @@ header ul {
 
 .gallery_filtersSubCategory button a:hover{
   border: #830c0c solid 0.5px;
+  
   font-size: 1.02em;
   font-weight: 700;  
 }
@@ -162,6 +113,11 @@ header ul {
 }
 
 /*Galería imágenes*/
+.gallery__container{
+    display: grid;
+    
+    margin: 2px;
+}
 
 .gallery__fotos {
   columns: 3 300px;
@@ -169,9 +125,20 @@ header ul {
   column-gap: 30px;
   /*espacios entre fotos*/
 
+    
 }
 
 img {
+    width: 100%;
+    height: auto; /* Ajusta automáticamente la altura para mantener la proporción de aspecto */
+    display: block; /* Elimina espacios en blanco debajo de las imágenes */
+    margin-bottom: 30px; /* Ajusta el espacio entre las imágenes */
+    cursor: pointer;
+    border-radius: 0.1em;
+    padding: 5px;
+    transition: all 0.20s;
+    transition-timing-function: linear;
+    
   max-width: 100%;
   margin-bottom: 2em;
   cursor: pointer;
@@ -184,31 +151,179 @@ img {
 /* CLASES MODAL */
 
 <<<<<<<<< Temporary merge branch 1
+=========
 /* Añade estos estilos para el modal */
 .modal {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    padding-top: 50px;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgb(0,0,0);
-    background-color: rgba(0,0,0,0.9);
-  }
-  
-  .modal-content {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 50px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+#modalTitle {
+  font-family: 'raleway', Helvetica, sans-serif;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+#modalPrice {
+  font-family: 'raleway', Helvetica, sans-serif;
+  font-size: 78px;
+  color: #ffd700;
+  max-height: 14vh;
+}
+
+.modal-info {
+  display: flex;
+  color: #fff;
+}
+
+.modal-content {
+  display: flex;
+  max-width: 43vw;
+  max-height: 56vh;
+}
+
+.modal__section {
+  display: flex;
+  justify-content: space-around;
+
+}
+
+.modal__info-justify {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: flex-end;
+  min-width: 28vw;
+  height: 74vh;
+  margin-top:-7%;
+}
+
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.prev,
+.next {
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: bold;
+  color: #f1f1f1;
+}
+
+.prev:hover,
+.next:hover {
+  color: #ddd;
+}
+>>>>>>>>> Temporary merge branch 2
+
+
+/*Media queries*/
+@media only screen and (max-width:900px) {
+  .gallery_filtersSubCategory {
     display: flex;
-    max-width: 43vw;
-    /* max-height: 80%; */
-    margin-left: 3%;
+    margin: auto;
+    gap: 30px;
+
+  }
 }
-.modal__section{
-    display:flex;
-    
+
+<<<<<<<<< Temporary merge branch 1
+    @media only screen and (max-width:540px){
+        .gallery_filtersSubCategory{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: auto;
+            gap: 0px;
+            
+        }}
+=========
+@media only screen and (max-width:660px) {
+  .gallery_filtersSubCategory {
+    display: flex;
+    margin: auto;
+    gap: 0px;
+
+  }
 }
+
+@media only screen and (max-width:540px) {
+  .gallery_filtersSubCategory {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: auto;
+    gap: 0px;
+
+  }
+    /*Galería imágenes*/
+
+    .gallery__fotos {
+      columns: 3 300px;
+      /*ajustar tamaño imagenes*/
+      column-gap: 30px;
+      /*espacios entre fotos*/
+
+    }
+
+    img {
+      max-width: 100%;
+      margin-bottom: 2em;
+      cursor: pointer;
+
+      border-radius: 0.1em;
+      padding: 5px;
+      transition: all .3s
+    }
+
+    /* CLASES MODAL */
+
+    /* Añade estos estilos para el modal */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      padding-top: 50px;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgb(0, 0, 0);
+      background-color: rgba(0, 0, 0, 0.9);
+    }
+
+    .modal-content {
+      display: flex;
+      max-width: 43vw;
+      margin-left: 3%;
+    }
+
+    .modal__section {
+      display: flex;
+
+    }
 
 #modalTitle {
     font-family: 'raleway', Helvetica, sans-serif;
@@ -286,13 +401,14 @@ img {
   }
 }
 
-    @media only screen and (max-width:540px){
-        .gallery_filtersSubCategory{
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            margin: auto;
-            gap: 0px;
-            
-        }}
+@media only screen and (max-width:540px) {
+  .gallery_filtersSubCategory {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: auto;
+    gap: 0px;
+
+  }
+}
 >>>>>>>>> Temporary merge branch 2

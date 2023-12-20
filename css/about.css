@@ -4,97 +4,88 @@
     height: 93vh;
 
     display: flex;
-    
+    padding: 0; /* Ajuste del padding para pantallas de ordenadores */
 }
 
+/* Imagen */
 .about__img {
-    width: 50vhm;
-    max-height: 110vh;
+    width: 42vw; /* Ocupa la mitad del ancho de la pantalla */
+    max-width: 100%; /* Ajusta el ancho máximo para asegurar que la imagen no se desborde */
+    max-height: 100vh; /* Altura máxima relativa al tamaño de la pantalla */
+    padding: 1% 2% 2% 0.1%; /* Ajustes de padding */
+    margin-left: -2vw; /* Ajusta el margen izquierdo para que la imagen se extienda hacia la izquierda */
 }
 
-
+/* Figura */
 .about__figure {
     display: flex;
     flex-direction: column-reverse;
-    margin-left: -0.2%;
+    justify-content: space-between;
 }
 
+/* Artículo */
 .about__article {
-    padding: 1.5em;
+    padding: 5%; /* Ajusta el padding para que sea un 5% del ancho de la pantalla */
     display: flex;
-    flex-direction: row;
-    justify-content: center;
-    /* margin-right: 10em; */
+    flex-direction: column; /* Ajuste para pantallas de ordenadores */
+    align-items: center; /* Alinea el contenido al centro */
     background-color: #262726;
     color: white;
 }
-.about__title{
-    text-align: center;
-    font-size: 5vh;
+
+/* Título */
+.about__title {
+    text-align: center; /* Alinea el título al centro */
+    font-size: 4em; /* Tamaño de fuente fijo */
+    margin: 0; /* Elimina el margen para evitar problemas de centrado */
 }
 
+/* Descripción */
 .about__description {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    padding-bottom: 8%;
-    max-width: 38%;
-    justify-content: center;
-    font-size: 3vh;
-    text-align: justify;
+    max-width: 39vw; /* Ancho máximo relativo al tamaño de la pantalla */
+    font-size: 1.5em; /* Tamaño de fuente fijo */
+    text-align: center; /* Alinea el párrafo al centro */
+    margin: 11% 1% 5% 1%; /* Centra el elemento en base al ancho */
 }
 
-
-
-/*Media queries*/
-
-@media only screen and (max-width:1080px){
-   
-    
-    .about__article{
-        margin-right: 11em;
+@media only screen and (max-width: 600px) {
+    .about__container {
         display: flex;
-        justify-content: center;
-        align-items: center;
+        flex-direction: column; /* Coloca los elementos en columna en dispositivos móviles */
     }
 
-    .about__container{
-        display: flex;
-        flex-direction: column;
+    .about__text {
+        order: 2; /* Cambia el orden de visualización, ahora está debajo de la imagen */
+        text-align: center;
+        padding: 20px; /* Ajusta según sea necesario */
+    }
+
+    .about__img {
+        width: 100%; /* Ajusta el ancho de la imagen al 100% del contenedor */
+        max-height: none; /* Elimina la altura máxima para dispositivos móviles */
+        margin-left: 0; /* Restablece el margen izquierdo para dispositivos móviles */
+        padding: 0; /* Elimina el padding para dispositivos móviles */
         
+        /* Añade la clase para ajustar la orientación en dispositivos móviles */
+        transform: rotate(0deg); /* Por ejemplo, gira la imagen 90 grados en sentido horario */
+
+        /* Ajustes para situar la imagen encima del título */
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
     }
-        .about__article{
-            margin-right: 0;
-            text-align: center;
-            background-color: #000;
-        }
 
-        .about__img {
-          width: 100%;
-          height: auto;
-          display: flex;
-          justify-content: center;
-      }
-      
-
-}
-
-@media only screen and (max-width:840px){
-
-    .about__article {
-        display: flex;
-        flex-direction: column;
+    .about__title {
+        font-size: 2.5em; /* Tamaño de fuente ajustado para dispositivos móviles */
+        text-align: center; /* Alinea el título al centro */
+        margin: 590px 15px 1px; /* Añade margen superior e inferior al título para centrarlo */
     }
-    .about__description h2{
-        opacity: 0;
-    }
+    
     .about__description {
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
-        padding-bottom: 8%;
-        max-width: 61%;
-        text-align: left;
-
+        max-width: 98%; /* Ancho máximo relativo para dispositivos móviles */
+        font-size: 1.2em; /* Tamaño de fuente ajustado para dispositivos móviles */
+        text-align: center; /* Alinea la descripción al centro */
+        margin: 30px 0%; /* Ajusta el margen para dispositivos móviles */
     }
 }
