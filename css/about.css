@@ -8,8 +8,15 @@
 }
 
 .about__img {
-    width: auto;
-    max-height: 76vh;
+    width: 50vhm;
+    max-height: 110vh;
+}
+
+
+.about__figure {
+    display: flex;
+    flex-direction: column-reverse;
+    margin-left: -0.2%;
 }
 
 .about__article {
@@ -18,11 +25,12 @@
     flex-direction: row;
     justify-content: center;
     /* margin-right: 10em; */
-    background-color: #000;
+    background-color: #262726;
     color: white;
 }
 .about__title{
     text-align: center;
+    font-size: 5vh;
 }
 
 .about__description {
@@ -31,6 +39,9 @@
     justify-content: flex-end;
     padding-bottom: 8%;
     max-width: 38%;
+    justify-content: center;
+    font-size: 3vh;
+    text-align: justify;
 }
 
 
@@ -84,5 +95,6 @@
         padding-bottom: 8%;
         max-width: 61%;
         text-align: left;
+
     }
 }

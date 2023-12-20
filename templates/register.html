@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-  <link rel="icon" sizes="16x16 32x32 48x48" type="image/svg" href="./img/favicon.svg" />
+  <link rel="icon" sizes="16x16 32x32 48x48" type="image/svg" href="../img/favicon.svg" />
   <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="../css/normalize.css">
   <link rel="stylesheet" href="../css/register.css">
@@ -22,10 +22,12 @@
   <!--Menú-->
 
     <nav>
-        <img id="logoPrincipal" src="../img/logoBlanco.svg" alt="Logotipo Miguel Meixoeiro" class="hide-logo">
+      <a href="../index.html" class="nav__logo logo">
+      <img id="logoPrincipal" src="../img/iconos/logoBlanco.svg" alt="Logotipo Miguel Meixoeiro" class="hide-logo">
+      </a>
       <ul>
-        <li><a href="#acceso">ACCESO</a></li>
-        <li><a href="#about">ABOUT</a></li>
+        <li><a href="../templates/login.html">ACCESO</a></li>
+        <li><a href="../templates/about.html">ABOUT</a></li>
         <li><a href="../templates/gallery.html">GALERIA</a></li>
         
       </ul>
@@ -33,7 +35,7 @@
   </header>
 
   <main class="hero fs" >
-    <div  class="bg heroBig"></div>
+    <!-- <div  class="bg heroBig"></div> -->
     <!-- slide rojo que aparece cuando clickamos en ACCESO -->
     <section class="sliderLateral" id="sliderLateralContainer">
 
@@ -67,40 +69,77 @@
       <form action="#" method="post">                 
         <div class="form-group">
           <label>
-            <input class="control" id="nombre" name="nombre" placeholder="Nombre" required>
+            <input class="control" id="nombre" name="nombre" placeholder="Nombre" required autocomplete="off">
           </label>
           <span id="errorNombre" class="error"></span>
         </div>               
         <div class="form-group">
           <label>
-            <input class="control" id="email" name="email" placeholder="Correo" required>
+            <input class="control" id="correo" name="correo" placeholder="Correo" required autocomplete="off">
           </label>
           <span id="errorEmail" class="error"></span>
         </div>
         <div class="form-group">
           <label>
-            <input class="control" id="password" name="password" type="password" placeholder="Contraseña" required> 
+            <input class="control" id="password" name="password" type="password" placeholder="Contraseña" required autocomplete="off"> 
           </label>
           <span id="errorPassword" class="error"></span>
         </div>  
+
+      <section class="botons">
         <div class="form-group">
           <label>            
-            <button class="botons" type="submit" >Registro</button>
+            <button class="button" type="submit" onclick="mostrarModal()">Registro</button>
           </label>
         </div>
-        <div class="form-group"></div>
-        <label>
-          <a href="login.html" target="_self"><p>Iniciar Sesión</p></a>
-        </label>
+        <div class="form-group">
+          <label>
+            <a class="button" href="login.html" target="_self" >Iniciar Sesión</a>
+          </label>
+        </div>
+      </section>
       </form>
     </section>
   </main>
 
+  <!-- Agrega esto después de tu formulario -->
+  <div id="myModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="cerrarModal()">&times;</span>
+      <p>¡Muchas gracias por registrarte!</p>
+      <a href="../templates/gallery.html"><button id="redd__galeria" onclick="galeria()">Galeria</button></a>
+    </div>
+  </div>
+
+
+  <div id="myModal" class="modal">
+    <!-- Modal content goes here -->
+    <span class="close" onclick="cerrarModal()">&times;</span>
+  </div>
+
+  <script>
+    function mostrarModal() {
+      var modal = document.getElementById('myModal');
+      modal.style.display = 'block';
+    }
+
+    function cerrarModal() {
+      var modal = document.getElementById('myModal');
+      modal.style.display = 'none';
+    }
+
+    function galeria() {
+      window.location.href = "index.html"; // Reemplaza "index.html" con la URL de tu página de inicio
+    }
+  </script>
+
+
   </main>
 
   <footer>
-    <img src="../img/logoPlanoBlanco.svg" alt="Logotipo Miguel Meixoeiro">
+    <img src="../img/iconos/logoPlanoBlanco.svg" alt="Logotipo Miguel Meixoeiro">
   </footer>
   <script src="../js/register.js"></script>
+  <script src="../js/scripJS.js"></script>
 </body>
 </html>

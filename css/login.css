@@ -14,7 +14,6 @@ body {
     height: 50vh;
 }
 
-
 h4{
     font-size: 30px;
     display: flex;
@@ -37,7 +36,6 @@ h4{
     /* max-width: 400px; */
     height: 40vh;
     margin: 90px;
-
 }
 
 @media screen and (max-width: 768px) {
@@ -63,15 +61,13 @@ h4{
 }
 
 .form-group{
-    margin: 13px;
+    margin: 2%;
     text-align: center;
-        
 }
 
 img .logo-user{
     width:10px;
     height: 10px;
-    
 }
 
 .logo-user{
@@ -79,7 +75,6 @@ img .logo-user{
     position:relative;
     left: 38px;
     margin-bottom: -5px;
-
 }
 
 .control{
@@ -89,22 +84,16 @@ img .logo-user{
     border: 1px solid #ffffff;
     border-radius: 13px;
     text-align: center;
-    
-
 }
 
 .botons{
-    width: 9.5rem;
-    height: 2.5rem;
-    background-color: #080808;
-    color: #ffffff;
-    border: #2F8F97;
-    border-radius: 10px;
-    box-shadow: 0 3px 6px 0 #000;
-    font-size: 18px;
-    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0px;
+    cursor: pointer;
 }
-
 
 .check-term{
     display: flex;
@@ -116,19 +105,16 @@ img .logo-user{
     display: grid;
     justify-items: center;
     align-items: center;
-
 }
 
 .logo-register{
     width: 30px;
     /* margin: 0rem; */
-   
 }
 
 .form-group a{
     text-decoration: none;
-    color: #b90909;
-    
+    color: #ffffff;
 }
 
 /* Media query para pantallas más pequeñas */
