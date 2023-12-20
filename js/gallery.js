@@ -134,10 +134,8 @@ document.addEventListener('DOMContentLoaded', function() {
             }             
           })
           .catch(error => console.error('Houston tenemos un problema:', error));
-=========
       image.addEventListener("click", function () {
         showModal(item);
->>>>>>>>> Temporary merge branch 2
       });
 
       return image;
@@ -305,7 +303,6 @@ function obtenerSubcategoriaSeleccionada() {
 function showAllImages(images) {
   photos.innerHTML = "";
 
-<<<<<<<<< Temporary merge branch 1
 
 
 
@@ -322,11 +319,9 @@ function showAllImages(images) {
 
 
 
-=========
   images.forEach((item) => {
     const imgElement = document.createElement("img");
     imgElement.src = item.url;
     photos.appendChild(imgElement);
   });
-}
->>>>>>>>> Temporary merge branch 2
+}})
