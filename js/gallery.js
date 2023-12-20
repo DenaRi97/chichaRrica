@@ -16,128 +16,22 @@ let data;
 
 // Muestra la API
 fetch(URL)
-    .then(response => {
-        if (!response.ok){
-            throw new Error('Algo esta pasandoo')
-        }      
-        return response.json()
-    })
-
-
-    .then(data => {
-        const galeria = data.map(item =>{
-
-
-
-            const image = document.createElement("img");//añadimos un img para cada foto
-            let sourceImage = item.url //llamamos a la ruta de la imagen
-            image.src = sourceImage //esto lo hacemos para dejarlo mejor anidado
-            // console.log(image.src);
-            return image;
-
-
-        }) 
-        console.log(data[1].price);
-        photos.append(...galeria);
-        
-    })
-    .catch(error=> console.log('La hemos cagao'))
-
-
-//Funcion para mostrar todas las imagenes
-    function showAllImages(images) { 
-
-        photos.innerHTML = ''
-
-        images.forEach(item => {
-           
-            const imgElement = document.createElement('img');  // Crea un elemento img
-                        
-            imgElement.src = item.url;//coge la ruta de la imagen
-        
-            photos.appendChild(imgElement);// Añade la imagen como hijo de gallery__fotos
-        })
-        
-      }
-    
-
-
-//Botones filtros categorías -----------------------------------------------------------
-
-buttonCategory.addEventListener("click", function() {
-    // console.log('category');
-
-    
-    if (buttonSubCategory.style.display === 'block') { //al hacer clic muestrame las categorias
-        buttonSubCategory.style.display = 'none'; //al hacer clic de nuevo desaparecen
-        hideAllButtons(containerSubCategory)
-
-        fetch(URL)
-            .then(response => response.json())
-            .then(data => showAllImages(data))
-            .catch(error => console.error('Houston tenemos un problema', error))
-        
-
-    } else {
-        buttonSubCategory.style.display = 'block';
-        showAllButtons(containerSubCategory)
+  .then((response) => {
+    if (!response.ok) {
+      throw new Error("Algo está pasando");
     }
-});
+    return response.json();
+  })
+  .then((responseData) => {
+    data = responseData;
+    const galeria = data.map((item) => {
+      const image = document.createElement("img");
+      let sourceImage = item.url;
+      image.src = sourceImage;
+      image.dataset.price = item.price;
 
-function hideAllButtons(container) { //funcion para esconder los botones
-    
-    const buttons = container.querySelectorAll("button");
-    buttons.forEach(button => {
-        button.style.display = 'none';
-    });
-}
-
-function showAllButtons(container) { //funcion para mostrar todos los botones
-    
-    const Allbuttons = container.querySelectorAll("button");
-    Allbuttons.forEach(button => {
-        button.style.display = 'block';
-    });
-}
-
-
-
-
-
-
-
-//Filtrar API por subcategorías -------------------------------------------------------------------------
-    
-document.addEventListener('DOMContentLoaded', function() {
-    
-    const buttons = document.querySelectorAll('.buttonSubCategory'); //botones subcategoria
-    const galleryFotosElement = document.querySelector('.gallery__fotos')
-
-    
-    buttons.forEach(button => {
-        button.addEventListener('click', function(event) { //creamos un evento
-        
-        // console.clear()
-        const keyword = event.currentTarget.getAttribute('data-keyword'); //cogemos el valor del boton sobre el que hemos hecho clic
-            
-        fetch(URL)
-          .then(response => response.json())
-          .then(data => {
-            
-            const matchingItems = data.filter(item => item.keyword === keyword);
-            // Usamos la funcion filter para crear un nuevo array (filterItems) que contiene los elementos del array original cuyo campo 'keyword' coincide con la keyword del boton
-
-            if (matchingItems.length > 0) { //comprueba si hay coincidencias
-              console.log('Resultados para', keyword, ':', matchingItems);
-              showAllImages(matchingItems) //muestra las img en pantalla
-
-            }             
-          })
-          .catch(error => console.error('Houston tenemos un problema:', error));
-=========
       image.addEventListener("click", function () {
         showModal(item);
->>>>>>>>> Temporary merge branch 2
       });
 
       return image;
@@ -266,38 +160,40 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-// Ajustar altura de forma automática --------------------------------------------------------
+//Ajustar altura de forma automatica----------------------------------------------------------------------------
 
 // Guarda la altura original al cargar la página
-const alturaOriginal = document.querySelector(".gallery__fotos").offsetHeight;
+const alturaOriginal = document.querySelector('.gallery__fotos').offsetHeight;
 
 // Función para ajustar la altura de las imágenes
 function ajustarAltura() {
-  const galeria = document.querySelector(".gallery__fotos");
+    const galeria = document.querySelector('.gallery__fotos');
 
-  // Lógica para ajustar la altura según la subcategoría o filtro aplicado
-  // Puedes adaptar esto según cómo obtienes y aplicas los datos de la API
-  // Aquí un ejemplo básico:
-  const subcategoriaSeleccionada = obtenerSubcategoriaSeleccionada(); // Implementa esta función
+    // Lógica para ajustar la altura según la subcategoría o filtro aplicado
+    // Puedes adaptar esto según cómo obtienes y aplicas los datos de la API
+    // Aquí un ejemplo básico:
+    const subcategoriaSeleccionada = obtenerSubcategoriaSeleccionada(); // Implementa esta función
 
-  if (subcategoriaSeleccionada) {
-    // Lógica para ajustar la altura según la subcategoría
-    galeria.style.columnCount = 2; // o el número que desees para la subcategoría
-  } else {
-    // Restablece a la altura original si no hay filtro
-    galeria.style.columnCount = "auto";
-  }
+    if (subcategoriaSeleccionada) {
+        // Lógica para ajustar la altura según la subcategoría
+        galeria.style.columnCount = 2; // o el número que desees para la subcategoría
+    } else {
+        // Restablece a la altura original si no hay filtro
+        galeria.style.columnCount = 'auto';
+    }
 }
 
 // Llama a la función al cargar la página y cuando se aplique el filtro
-document.addEventListener("DOMContentLoaded", ajustarAltura);
-document.addEventListener("cambioFiltro", ajustarAltura); // Escucha un evento personalizado o ajusta según cómo aplicas los filtros
+document.addEventListener('DOMContentLoaded', ajustarAltura);
+document.addEventListener('cambioFiltro', ajustarAltura); // Escucha un evento personalizado o ajusta según cómo aplicas los filtros
+
+
 
 // Función ficticia para obtener la subcategoría seleccionada
 function obtenerSubcategoriaSeleccionada() {
   // Implementa la lógica necesaria para obtener la subcategoría seleccionada
   // Puede depender de cómo has estructurado tu página y cómo obtienes la información de los filtros
-   
+
   return null; // Cambia esto según tu implementación
 }
 
@@ -305,28 +201,11 @@ function obtenerSubcategoriaSeleccionada() {
 function showAllImages(images) {
   photos.innerHTML = "";
 
-<<<<<<<<< Temporary merge branch 1
-
-
-
-
-//Chuleta para mostrar los objetos del Array
- // for(let i=0; i < data.length; i++) { //recorre el array
-            // //    console.log(data[i].keyword)
-            //    if(data[i].keyword === `${personas}`){
-            //     console.log(data[i])
-            //    }
-               
-            // }
-
-
-
-
-=========
   images.forEach((item) => {
     const imgElement = document.createElement("img");
     imgElement.src = item.url;
     photos.appendChild(imgElement);
   });
 }
->>>>>>>>> Temporary merge branch 2
+
+//prueba commit
