@@ -325,3 +325,6 @@ function showAllImages(images) {
     photos.appendChild(imgElement);
   });
 }})
+
+
+//prueba commit
