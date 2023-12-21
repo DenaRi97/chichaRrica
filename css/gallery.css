@@ -78,9 +78,11 @@ display: none;
 }
 
 .gallery__buttonSubCategory:hover{
-  font-weight: bolder;
-  display: flex;
-  align-items: center;
+    font-weight: bolder;
+    border: white solid 2px;
+    
+    display: flex;
+    align-items: center; 
 }
 
 .gallery_filtersSubCategory button a{
