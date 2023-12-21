@@ -1,7 +1,7 @@
 /*Contenedor principal*/
 .about__container{
     /* overflow-y: scroll; */
-    height: 90vh;
+    height: 91.5vh;
 
     display: flex;
     padding: 0; /* Ajuste del padding para pantallas de ordenadores */
@@ -44,7 +44,7 @@
 .about__description {
     max-width: 39vw; /* Ancho máximo relativo al tamaño de la pantalla */
     font-size: 1.5em; /* Tamaño de fuente fijo */
-    text-align: center; /* Alinea el párrafo al centro */
+    text-align: justify; /* Ajusta el párrafo al centro */
     margin: 11% 1% 5% 1%; /* Centra el elemento en base al ancho */
 }
 
