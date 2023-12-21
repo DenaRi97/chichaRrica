@@ -43,3 +43,7 @@ document.addEventListener('DOMContentLoaded', function () {
     return true;
   }
 });
+function redirigirARegister() {
+  window.location.href = "register.html";
+}
+
