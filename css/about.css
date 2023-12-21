@@ -1,10 +1,8 @@
-/* Contenedor principal */
-body {
-    overflow: hidden;
-}
-
-.about__container {
+/*Contenedor principal*/
+.about__container{
+    /* overflow-y: scroll; */
     height: 90vh;
+
     display: flex;
     padding: 0; /* Ajuste del padding para pantallas de ordenadores */
 }
@@ -50,12 +48,7 @@ body {
     margin: 11% 1% 5% 1%; /* Centra el elemento en base al ancho */
 }
 
-
 @media only screen and (max-width: 600px) {
-    body {
-        overflow: auto; /* Activa el scroll para dispositivos móviles */
-    }
-    
     .about__container {
         display: flex;
         flex-direction: column; /* Coloca los elementos en columna en dispositivos móviles */
@@ -96,5 +89,3 @@ body {
         margin: 30px 0%; /* Ajusta el margen para dispositivos móviles */
     }
 }
-
-
