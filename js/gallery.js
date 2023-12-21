@@ -160,32 +160,34 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-// Ajustar altura de forma automática --------------------------------------------------------
+//Ajustar altura de forma automatica----------------------------------------------------------------------------
 
 // Guarda la altura original al cargar la página
 const alturaOriginal = document.querySelector('.gallery__fotos').offsetHeight;
 
 // Función para ajustar la altura de las imágenes
 function ajustarAltura() {
-  const galeria = document.querySelector(".gallery__fotos");
+    const galeria = document.querySelector('.gallery__fotos');
 
-  // Lógica para ajustar la altura según la subcategoría o filtro aplicado
-  // Puedes adaptar esto según cómo obtienes y aplicas los datos de la API
-  // Aquí un ejemplo básico:
-  const subcategoriaSeleccionada = obtenerSubcategoriaSeleccionada(); // Implementa esta función
+    // Lógica para ajustar la altura según la subcategoría o filtro aplicado
+    // Puedes adaptar esto según cómo obtienes y aplicas los datos de la API
+    // Aquí un ejemplo básico:
+    const subcategoriaSeleccionada = obtenerSubcategoriaSeleccionada(); // Implementa esta función
 
-  if (subcategoriaSeleccionada) {
-    // Lógica para ajustar la altura según la subcategoría
-    galeria.style.columnCount = 2; // o el número que desees para la subcategoría
-  } else {
-    // Restablece a la altura original si no hay filtro
-    galeria.style.columnCount = "auto";
-  }
+    if (subcategoriaSeleccionada) {
+        // Lógica para ajustar la altura según la subcategoría
+        galeria.style.columnCount = 2; // o el número que desees para la subcategoría
+    } else {
+        // Restablece a la altura original si no hay filtro
+        galeria.style.columnCount = 'auto';
+    }
 }
 
 // Llama a la función al cargar la página y cuando se aplique el filtro
-document.addEventListener("DOMContentLoaded", ajustarAltura);
-document.addEventListener("cambioFiltro", ajustarAltura); // Escucha un evento personalizado o ajusta según cómo aplicas los filtros
+document.addEventListener('DOMContentLoaded', ajustarAltura);
+document.addEventListener('cambioFiltro', ajustarAltura); // Escucha un evento personalizado o ajusta según cómo aplicas los filtros
+
+
 
 // Función ficticia para obtener la subcategoría seleccionada
 function obtenerSubcategoriaSeleccionada() {
@@ -205,5 +207,21 @@ function showAllImages(images) {
     photos.appendChild(imgElement);
   });
 }
+//Añado el boton del carrito
+addToCartButton.addEventListener("click", function () {
+  const productoSeleccionado = {
+      id: data[currentIndex].id,
+      title: data[currentIndex].title,
+      url: data[currentIndex].url,
+      price: data[currentIndex].price,
+  };
 
-//prueba commit
+  agregarProductoAlCarrito(productoSeleccionado);
+
+  modal.style.display = "none";
+  const mainHeader = document.getElementById("main-header");
+  mainHeader.style.display = "block";
+
+  // Redirección a carro.html
+  window.location.href = "carro.html";
+});

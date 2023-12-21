@@ -48,3 +48,11 @@ h2 {
 .go-to-gallery-button:hover {
     background-color: #45a049;
 }
+
+.white-icon {
+    color: #ffffff; 
+}
+.go-to-gallery-button{
+    text-decoration: none;
+
+}

@@ -45,11 +45,16 @@ body {
 
 /* Descripción */
 .about__description {
-    max-width: 39vw; /* Ancho máximo relativo al tamaño de la pantalla */
-    font-size: 1.5em; /* Tamaño de fuente fijo */
-    text-align: justify; /* Ajusta el párrafo al centro */
-    margin: 11% 1% 5% 1%; /* Centra el elemento en base al ancho */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-bottom: 8%;
+    max-width: 38%;
 }
+
+
+
+/*Media queries*/
 
 @media only screen and (max-width: 600px) {
     .about__container {
@@ -86,9 +91,11 @@ body {
     }
     
     .about__description {
-        max-width: 98%; /* Ancho máximo relativo para dispositivos móviles */
-        font-size: 1.2em; /* Tamaño de fuente ajustado para dispositivos móviles */
-        text-align: justify; /* Alinea la descripción al centro */
-        margin: 30px 0%; /* Ajusta el margen para dispositivos móviles */
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding-bottom: 8%;
+        max-width: 61%;
+        text-align: left;
     }
 }
