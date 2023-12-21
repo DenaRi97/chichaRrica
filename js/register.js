@@ -25,7 +25,7 @@ const expresiones = {
 	  document.querySelector(`#grupo__${campo} i`).classList.remove('fa-check-circle');
 	  document.querySelector(`#grupo__${campo} .formulario__input-error`).classList.add('formulario__input-error-activo');
 	  campos[campo] = false;
-	}
+	} console.log(validarCampo)
   };
   
   const validarFormulario = (event) => {
@@ -33,35 +33,11 @@ const expresiones = {
 	validarCampo(expresiones.nombre, document.getElementById('nombre'), 'nombre');
 	validarCampo(expresiones.password, document.getElementById('password'), 'password');
 	validarCampo(expresiones.correo, document.getElementById('correo'), 'correo');
-  
-	// Handle form submission
-	const terminos = document.getElementById('terminos');
-	if (!(campos.nombre && campos.password && campos.correo && terminos.checked)) {
-	  event.preventDefault(); // Prevent form submission if validation fails
-	  document.getElementById('formulario__mensaje').classList.add('formulario__mensaje-activo');
-	}
-  };
-  
+  }
+
   const formulario = document.querySelector('.formulario form');
   formulario.addEventListener('submit', validarFormulario);
-  
-  
-const terminos = document.getElementById('terminos');
-if (campos.nombre && campos.password && campos.correo && terminos.checked) {
-	formulario.reset();
 
-	document.getElementById('formulario__mensaje-exito').classList.add('formulario__mensaje-exito-activo');
-	setTimeout(() => {
-	document.getElementById('formulario__mensaje-exito').classList.remove('formulario__mensaje-exito-activo');
-	}, 5000);
-
-	document.querySelectorAll('.formulario__grupo-correcto').forEach((icono) => {
-	icono.classList.remove('formulario__grupo-correcto');
-	});
-} else {
-	document.getElementById('formulario__mensaje').classList.add('formulario__mensaje-activo');
-};
-  
   document.addEventListener('DOMContentLoaded', function () {
 	var formulario = document.querySelector('.formulario form');
   
