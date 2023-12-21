@@ -25,7 +25,7 @@ const expresiones = {
 	  document.querySelector(`#grupo__${campo} i`).classList.remove('fa-check-circle');
 	  document.querySelector(`#grupo__${campo} .formulario__input-error`).classList.add('formulario__input-error-activo');
 	  campos[campo] = false;
-	} console.log(validarCampo)
+	}
   };
   
   const validarFormulario = (event) => {

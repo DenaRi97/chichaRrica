@@ -103,34 +103,34 @@
   </main>
 
   <!-- Agrega esto después de tu formulario -->
-  <div id="myModal" class="modal">
-    <!-- <div class="modal-content">
+  <div id="modal__gracias" class="modal__thanks">
+    <div class="modal__graciasContent">
       <span class="close" onclick="cerrarModal()">&times;</span>
       <p>¡Muchas gracias por registrarte!</p>
       <a href="../templates/gallery.html"><button id="redd__galeria" onclick="galeria()">Galeria</button></a>
     </div>
-  </div> -->
+  </div>
 
 
-  <div id="myModal" class="modal">
+  <div id="modal__gracias" class="modal__thanks">
     <!-- Modal content goes here -->
-    <!-- <span class="close" onclick="cerrarModal()">&times;</span> -->
+    <span class="close" onclick="cerrarModal()">&times;</span>
   </div>
 
   <script>
-    // function mostrarModal() {
-    //   var modal = document.getElementById('myModal');
-    //   modal.style.display = 'block';
-    // }
+    function mostrarModal() {
+      var modal = document.getElementById('modal__gracias');
+      modal.style.display = 'block';
+    }
 
-    // function cerrarModal() {
-    //   var modal = document.getElementById('myModal');
-    //   modal.style.display = 'none';
-    // }
+    function cerrarModal() {
+      var modal = document.getElementById('modal__gracias');
+      modal.style.display = 'none';
+    }
 
-    // function galeria() {
-    //   window.location.href = "index.html"; // Reemplaza "index.html" con la URL de tu página de inicio
-    // }
+    function galeria() {
+      window.location.href = "index.html"; 
+    }
   </script>
 
 

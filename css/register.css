@@ -49,6 +49,14 @@ h4{
     margin: 90px;
 }
 
+.formulario__grupo-incorrecto{
+    color: #980101;
+    background-color: #ffffff;
+}
+.formulario__grupo-correcto{
+    color: #980101;
+    background-color: #ffffff;
+}
 
 @media screen and (max-width: 768px) {
     .formulario {
@@ -143,7 +151,7 @@ img .logo-user{
 
 
 /* Agrega estos estilos para la ventana modal */
-.modal {
+.modal__thanks {
     display: none;
     position: fixed;
     top: 0;
@@ -152,12 +160,12 @@ img .logo-user{
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
   }
-  .modal p{
+  .modal__thanks p{
     font-weight: 300;
 
   }
   
-  .modal-content {
+  .modal__graciasContent {
     background-color: #fefefe;
     margin: 28% auto;
     padding: 70px;
@@ -171,6 +179,7 @@ img .logo-user{
     padding: 3% 7% 3% 7%;
     border: #980101;
     border-radius: 5rem;
+    cursor: pointer;
   }
   
   .close {
