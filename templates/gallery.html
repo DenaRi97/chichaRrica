@@ -76,6 +76,14 @@
                     <section class="modal__info-justify">
                         <h2 id="modalTitle"></h2>
                         <p id="modalPrice"></p>
+                        <a href="cart.html">
+                            <div class="cart">
+                              <i class="fa fa-shopping-cart"></i>
+                              <div id="cartAmount" class="cartAmount">0</div>
+                            </div>
+                          </a>
+                          <button onclick="agregarAlCarrito('ID_DEL_PRODUCTO', 'Nombre del Producto', 20.00, 'URL_DE_LA_IMAGEN')">Añadir al Carrito</button>
+
                         <div class="center">
                             <button class="button" id="addToCart__button" onclick="agregarAlCarrito()" >AÑADIR</button>
                         </div>
@@ -86,7 +94,10 @@
         </div>
     </main>
     <script src="../js/gallery.js"></script>
-    <script src="../js/carro.js"></script>
+    <!-- <script src="../js/carro.js"></script> -->
+    <script src="script/cart.js"></script>
+    <script src="script/main.js"></script>
+
 </body>
 
 </html>

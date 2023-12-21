@@ -178,3 +178,28 @@ let clearCart = () => {
   calculation();
   localStorage.setItem("data", JSON.stringify(basket));
 };
+// carrito.js
+
+let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+
+function agregarAlCarrito(id, nombre, precio, imagen) {
+    const index = carrito.findIndex((p) => p.id === id);
+
+    if (index !== -1) {
+        // Si el producto ya está en el carrito, incrementa la cantidad
+        carrito[index].cantidad += 1;
+    } else {
+        // Si el producto no está en el carrito, agrégalo con cantidad 1
+        const nuevoProducto = {
+            id: id,
+            nombre: nombre,
+            precio: precio,
+            cantidad: 1,
+            imagen: imagen
+        };
+        carrito.push(nuevoProducto);
+    }
+
+    // Guarda el carrito en localStorage
+    localStorage.setItem("carrito", JSON.stringify(carrito));
+}
