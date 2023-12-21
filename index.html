@@ -43,7 +43,7 @@
           <p class="card__title">FOTOS EN GRAN FORMATO</p>
           <p class="card__description">Transforma tus espacios con la elegancia de la fotografía de <strong>Miguel Meixoeiro</strong>. <br><br>Descubre nuestras impresiones en gran formato y lleva el arte a tu hogar hoy.</p>
           <div class="center no-decoration">
-            <a href="./templates/gallery.html" class="button">VISITA LA GALERÍA</a>
+            <a href="./templates/gallery.html" class="button__banner">VISITA LA GALERÍA</a>
           </div>
         </div>
       </div>
@@ -55,15 +55,15 @@
       <img src="./img/iconos/logoBlanco.svg" alt="Logotipo Miguel Meixoeiro" class="logoSlideBlanco">
 
       <section class="slider__formulario">
-        
-        <form class="form">
-          <a class="navicon" id="sliderRojo"><i class="fas fa-bars icon"></i></a>
-          <input class="input" type="text" placeholder="Nombre">
-          <input class="input" type="text" placeholder="E-Mail">
-          <textarea class="textarea" placeholder="Mensaje"></textarea> 
+        <form class="form" id="myForm">
+          <a class="navicon" onclick="cerrarVentana()" id="sliderRojo"><i class="fas fa-times icon"></i></a>
+          <input class="input" type="text" id="nombre" placeholder="Nombre">
+          <input class="input" type="email" id="email" placeholder="E-Mail">
+          <textarea class="textarea" id="mensaje" placeholder="Mensaje"></textarea> 
           <div class="center">
-            <button class="button">Submit</button>
+            <button type="button" class="button" onclick="validarFormulario()">Submit</button>
           </div>
+          <div id="formulario__alert" class="alerta"></div>
         </form>
       </section>
       <section class="redes">
@@ -72,7 +72,6 @@
         <img src="./img/linkedin.svg" alt="" class="redes--formato">
         <img src="./img/twiter.svg" alt="" class="redes--formato twit">
       </section>
-      
 
     </section>
     <!-- Contenido principal, incluyendo la imagen de fondo -->
