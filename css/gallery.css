@@ -60,7 +60,7 @@ height: 10%;
 background-color: #830c0c;
 padding: 1%;
 border-radius: 43px;
-
+transition: cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .gallery__buttonSubCategory{

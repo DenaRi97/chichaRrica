@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-  <link rel="icon" sizes="16x16 32x32 48x48" type="image/svg" href="../img/favicon.svg" />
+  <link rel="icon" sizes="16x16 32x32 48x48" type="image/svg" href="../img/iconos/favicon.svg" />
   <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="../css/normalize.css">
   <link rel="stylesheet" href="../css/register.css">
@@ -39,7 +39,7 @@
     <!-- slide rojo que aparece cuando clickamos en ACCESO -->
     <section class="sliderLateral" id="sliderLateralContainer">
 
-      <img src="../img/logoBlanco.svg" alt="Logotipo Miguel Meixoeiro" class="logoSlideBlanco">
+      <img src="../img/iconos/logoBlanco.svg" alt="Logotipo Miguel Meixoeiro" class="logoSlideBlanco">
 
       <section class="slider__formulario">
         <form class="form">
@@ -82,22 +82,24 @@
         <div class="form-group">
           <label>
             <input class="control" id="password" name="password" type="password" placeholder="Contraseña" required autocomplete="off"> 
+            <section class="botons">
+              <!-- <div class="form-group">
+                <label>            
+                  <button class="button__register" type="submit" onclick="mostrarModal()">Registro</button>
+                </label>
+              </div> -->
+              <div class="form-group ">
+                <label>
+                  
+                  <a class="button__register" href="login.html" target="_self" >Iniciar Sesión</a>
+                  <button class="button__register" type="submit" onclick="mostrarModal()">Registro</button>
+                </label>
+              </div>
+            </section>
           </label>
           <span id="errorPassword" class="error"></span>
         </div>  
 
-      <section class="botons">
-        <div class="form-group">
-          <label>            
-            <button class="button" type="submit" onclick="mostrarModal()">Registro</button>
-          </label>
-        </div>
-        <div class="form-group">
-          <label>
-            <a class="button" href="login.html" target="_self" >Iniciar Sesión</a>
-          </label>
-        </div>
-      </section>
       </form>
     </section>
   </main>

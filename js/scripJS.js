@@ -88,9 +88,15 @@ function validarFormulario() {
   }
 
   function cerrarVentana() {
+      // Limpiar campos del formulario
+    document.getElementById("nombre").value = "";
+    document.getElementById("email").value = "";
+    document.getElementById("mensaje").value = "";
     // Oculta la clase 'show-slider' en lugar de establecer 'display: none'
     document.getElementById("sliderLateralContainer").classList.remove('show-slider');
     // También puedes restaurar la opacidad del logo si es necesario
     document.getElementById("logoPrincipal").style.opacity = '1';
+      // Limpiar el contenido del mensaje de alerta
+    document.getElementById("formulario__alert").innerHTML = '';
   }
   

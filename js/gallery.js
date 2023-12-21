@@ -1,9 +1,7 @@
 const URL = "http://localhost:3000/data";
 const photos = document.querySelector(".gallery__fotos");
 const buttonCategory = document.querySelector(".gallery__buttonCategory");
-const containerSubCategory = document.querySelector(
-  ".gallery_filtersSubCategory"
-);
+const containerSubCategory = document.querySelector(".gallery_filtersSubCategory");
 const buttonSubCategory = document.querySelector(".gallery__buttonSubCategory");
 
 // Variables para la paginación
