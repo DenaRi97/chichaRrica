@@ -4,9 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="./css/carro.css">
-    <link rel="stylesheet" href="./css/style.css">
-    <title>Carrito de Compra</title>
+    <link rel="stylesheet" href="../css/carro.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="icon" sizes="16x16 32x32 48x48" type="image/svg" href="../img/iconos/favicon.svg" />
+      <title>Carrito de Compra</title>
 </head>
 <body>
 
@@ -21,29 +23,28 @@
         <!--Menú-->
     
         <nav>
-          <a href="../index.html" class="nav__logo logo">
-          <img id="logoPrincipal" src="./img/iconos/logoLetraBlanca.svg" alt="Logotipo Miguel Meixoeiro" class="hide-logo">
+          <a href="index.html" class="nav__logo logo">
+          <img id="logoPrincipal" src="../img/iconos/logoLetraBlanca.svg" alt="Logotipo Miguel Meixoeiro" class="hide-logo">
           </a>
           <ul>
             <li><a href="#contacto" id="sliderRojo" class="toggle-logo">CONTACTO</a></li>
             <li><a href="./templates/about.html">ABOUT</a></li>
-            <li><a href="./templates/gallery.html">GALERIA</a></li>
+            <li><a href="gallery.html">GALERIA</a></li>
             <li><a href="#acceso">ACCESO</a></li>
-            
+            <li><i class="fas fa-shopping-cart white-icon"></i></li>
           </ul>
         </nav>
       </header>
 
+      <section>
+        <div id="cart-container" class="shop"></div>
+    </section>
 
-    <main class="gallery__container">
-        <section id="products__display" class="carrito-container">
-            <!-- Aqui deberia de añadirse el contenido de cada producto -->
-            <h2>Tu carrito de la compra</h2>
-            <p class="empty-cart-message">El carrito de la compra se encuentra vacío. Echale un vistazo a la galería.</p>
-            <button class="go-to-gallery-button">Ir a la Galería</button>
-        </section>
-    </main>
-    <script src="./js/carro.js"></script>
-    <script src="./js/scripJS.js"></script>
+    <!-- Llamada para renderizar el carrito cuando la página carga -->
+    <script>
+      renderizarCarrito();
+      </script>
+    <script src="../js/scripJS.js"></script>
+    <script src="../js/carro.js"></script>
 </body>
 </html>
