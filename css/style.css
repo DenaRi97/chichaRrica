@@ -30,6 +30,8 @@ body {
 }
 
 
+
+
 header nav {
   display: flex;
   justify-content: space-between;
@@ -130,6 +132,11 @@ header li a:hover {
 .slider__formulario{
   width: auto;
   height: auto;
+}
+.icon:hover{
+  font-size: 1.2em;
+  rotate: 45deg;
+  transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .form {
@@ -240,6 +247,16 @@ header li a:hover {
   text-align: center;
 }
 
+.invalid {
+  border: 2px solid #f20519;
+}
+
+.alerta{
+  height: 4%;
+  color:#f20519;
+  /* display:none; */
+}
+
 /* REDES SOCIALES */
 
 .redes {
@@ -254,6 +271,10 @@ header li a:hover {
 
 .redes--formato{
   min-height: 8%;
+}
+.redes--formato:hover{
+  scale:1.2;
+  transition: scale 0.3s linear 0.3s;
 }
 
 
@@ -355,8 +376,9 @@ footer img {
 .card__title {
   margin: 0;
   font-size: 24px;
-  color: #333;
+  color: #f2f2f2;
   font-weight: 700;
+  text-align: center;
 }
 
 .card:hover svg {
@@ -369,6 +391,37 @@ footer img {
   color: #777;
   line-height: 1.4;
   text-align: center;
+}
+
+.button__banner {
+  margin-top: 10px;
+  font-family: 'raleway', Helvetica, sans-serif;
+  font-size: 17px;
+  background: #8c0303;
+  color: #d9d9d9;
+  padding: 0.7em 5.5em;
+  display: flex;
+  align-items: center;
+  border: 2px solid #66da4300;
+  border-radius: 5em;
+  overflow: hidden;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+.button__banner:hover {
+  border: 2px solid #d9d9d9;
+  background: #00000000;
+  color: #fff;
+}
+
+.button__banner:active {
+  border: 2px solid #66da4300;
+  background: #f20519;
+  color: black;
+}
+.button__banner a {
+  overflow: hidden;
+  padding: 0%;
 }
 
 /* ----------------------------------------------- */
@@ -443,5 +496,13 @@ footer img {
   .menu__btn {
     display: none;
   }
-}
+
+  .card__description {
+    font-size: 2.8vw;
+  }
+
+  .button__banner {
+    font-size: 0.6em;
+  }
+} 
 

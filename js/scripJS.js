@@ -44,3 +44,59 @@ document.addEventListener('DOMContentLoaded', function () {
       logoPrincipal.style.opacity = '1';
   });
 });
+
+// Validacion de formulario index
+
+function validarFormulario() {
+    var nombre = document.getElementById("nombre");
+    var email = document.getElementById("email");
+    var mensaje = document.getElementById("mensaje");
+    var alertDiv = document.getElementById("formulario__alert");
+
+    // Resetear estilos y contenido del div
+    nombre.classList.remove("invalid");
+    email.classList.remove("invalid");
+    mensaje.classList.remove("invalid");
+    alertDiv.innerHTML = '';
+
+    // Validación del nombre (puede personalizarse según tus necesidades)
+    if (nombre.value === '') {
+      alertDiv.innerHTML = 'Por favor, ingresa tu nombre.';
+      nombre.classList.add("invalid");
+      return;
+    }
+
+    // Validación del correo electrónico
+    var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email.value)) {
+      alertDiv.innerHTML = 'Por favor, ingresa un correo electrónico válido.';
+      email.classList.add("invalid");
+      return;
+    }
+
+    // Validación del mensaje
+    if (mensaje.value === '') {
+      alertDiv.innerHTML = 'Por favor, ingresa tu mensaje.';
+      mensaje.classList.add("invalid");
+      return;
+    }
+
+    // Si llegamos aquí, todos los campos son válidos
+    alertDiv.innerHTML = 'Formulario enviado correctamente!';
+    // Cerrar la ventana lateral solo si la validación es exitosa
+    cerrarVentana();
+  }
+
+  function cerrarVentana() {
+      // Limpiar campos del formulario
+    document.getElementById("nombre").value = "";
+    document.getElementById("email").value = "";
+    document.getElementById("mensaje").value = "";
+    // Oculta la clase 'show-slider' en lugar de establecer 'display: none'
+    document.getElementById("sliderLateralContainer").classList.remove('show-slider');
+    // También puedes restaurar la opacidad del logo si es necesario
+    document.getElementById("logoPrincipal").style.opacity = '1';
+      // Limpiar el contenido del mensaje de alerta
+    document.getElementById("formulario__alert").innerHTML = '';
+  }
+  
