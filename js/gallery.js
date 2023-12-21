@@ -16,33 +16,26 @@ let data;
 
 // Muestra la API
 fetch(URL)
-    .then(response => {
-        if (!response.ok){
-            throw new Error('Algo esta pasandoo')
-        }      
-        return response.json()
-    })
-
-
-    .then(data => {
-        const galeria = data.map(item =>{
-
-
-
-            const image = document.createElement("img");//añadimos un img para cada foto
-            let sourceImage = item.url //llamamos a la ruta de la imagen
-            image.src = sourceImage //esto lo hacemos para dejarlo mejor anidado
-            // console.log(image.src);
-
-            // Añade un atributo personalizado para almacenar el precio en el elemento de imagen
-            image.dataset.price = item.price;
+  .then((response) => {
+    if (!response.ok) {
+      throw new Error("Algo está pasando");
+    }
+    return response.json();
+  })
+  .then((responseData) => {
+    data = responseData;
+    const galeria = data.map((item) => {
+      const image = document.createElement("img");
+      let sourceImage = item.url;
+      image.src = sourceImage;
+      image.dataset.price = item.price;
 
       image.addEventListener("click", function () {
         showModal(item);
       });
 
-            return image;
-
+      return image;
+    });
 
     photos.append(...galeria);
   })
@@ -61,14 +54,12 @@ function showModal(item) {
   mainHeader.style.display = "none";
 }
 
-    // Obtén referencias a los elementos del modal
-    const modal = document.getElementById("myModal");
-    const modalImage = document.getElementById("modalImage");
-    const modalTitle = document.getElementById("modalTitle");
-    const modalPrice = document.getElementById("modalPrice");
-    const closeModal = document.querySelector(".close");
-    const prevButton = document.querySelector(".prev");
-    const nextButton = document.querySelector(".next");
+// Obtén referencias a los elementos del modal
+const modal = document.getElementById("myModal");
+const modalImage = document.getElementById("modalImage");
+const modalTitle = document.getElementById("modalTitle");
+const modalPrice = document.getElementById("modalPrice");
+const closeModal = document.querySelector(".close");
 
 // Manejador de clic en una imagen
 photos.addEventListener("click", function (event) {
@@ -101,32 +92,34 @@ prevButton.addEventListener("click", showPrevImage);
 nextButton.addEventListener("click", showNextImage);
 
 function showPrevImage() {
-  if (currentIndex > 0) {
-    currentIndex--;
+    if (currentIndex > 0) {
+      currentIndex--;
+    } else {
+      // Si estás en la primera página, ve a la última
+      currentIndex = data.length - 1;
+    }
     showModal(data[currentIndex]);
   }
-}
 
-        function showNextImage() {
-            // Aquí debes implementar la lógica para mostrar la siguiente imagen
-        }
-
-
-
-    //Botones filtros
-
-buttonCategory.addEventListener("click", function() {
-    console.log('category');
-
-    
-    if (buttonSubCategory.style.display === 'block') { //al hacer clic muestrame las categorias
-        buttonSubCategory.style.display = 'none'; //al hacer clic de nuevo desaparecen
-        hideAllButtons(containerSubCategory)
-
+function showNextImage() {
+    if (currentIndex < data.length - 1) {
+      currentIndex++;
     } else {
-        buttonSubCategory.style.display = 'block';
-        showAllButtons(containerSubCategory)
+      // Si estás en la última página, vuelve a la primera
+      currentIndex = 0;
     }
+    showModal(data[currentIndex]);
+  }
+
+// Botones filtros
+buttonCategory.addEventListener("click", function () {
+  if (buttonSubCategory.style.display === "block") {
+    buttonSubCategory.style.display = "none";
+    hideAllButtons(containerSubCategory);
+  } else {
+    buttonSubCategory.style.display = "block";
+    showAllButtons(containerSubCategory);
+  }
 });
 
 function hideAllButtons(container) {
@@ -167,38 +160,40 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-// Ajustar altura de forma automática --------------------------------------------------------
+//Ajustar altura de forma automatica----------------------------------------------------------------------------
 
 // Guarda la altura original al cargar la página
-const alturaOriginal = document.querySelector(".gallery__fotos").offsetHeight;
+const alturaOriginal = document.querySelector('.gallery__fotos').offsetHeight;
 
 // Función para ajustar la altura de las imágenes
 function ajustarAltura() {
-  const galeria = document.querySelector(".gallery__fotos");
+    const galeria = document.querySelector('.gallery__fotos');
 
-  // Lógica para ajustar la altura según la subcategoría o filtro aplicado
-  // Puedes adaptar esto según cómo obtienes y aplicas los datos de la API
-  // Aquí un ejemplo básico:
-  const subcategoriaSeleccionada = obtenerSubcategoriaSeleccionada(); // Implementa esta función
+    // Lógica para ajustar la altura según la subcategoría o filtro aplicado
+    // Puedes adaptar esto según cómo obtienes y aplicas los datos de la API
+    // Aquí un ejemplo básico:
+    const subcategoriaSeleccionada = obtenerSubcategoriaSeleccionada(); // Implementa esta función
 
-  if (subcategoriaSeleccionada) {
-    // Lógica para ajustar la altura según la subcategoría
-    galeria.style.columnCount = 2; // o el número que desees para la subcategoría
-  } else {
-    // Restablece a la altura original si no hay filtro
-    galeria.style.columnCount = "auto";
-  }
+    if (subcategoriaSeleccionada) {
+        // Lógica para ajustar la altura según la subcategoría
+        galeria.style.columnCount = 2; // o el número que desees para la subcategoría
+    } else {
+        // Restablece a la altura original si no hay filtro
+        galeria.style.columnCount = 'auto';
+    }
 }
 
 // Llama a la función al cargar la página y cuando se aplique el filtro
-document.addEventListener("DOMContentLoaded", ajustarAltura);
-document.addEventListener("cambioFiltro", ajustarAltura); // Escucha un evento personalizado o ajusta según cómo aplicas los filtros
+document.addEventListener('DOMContentLoaded', ajustarAltura);
+document.addEventListener('cambioFiltro', ajustarAltura); // Escucha un evento personalizado o ajusta según cómo aplicas los filtros
+
+
 
 // Función ficticia para obtener la subcategoría seleccionada
 function obtenerSubcategoriaSeleccionada() {
   // Implementa la lógica necesaria para obtener la subcategoría seleccionada
   // Puede depender de cómo has estructurado tu página y cómo obtienes la información de los filtros
-   
+
   return null; // Cambia esto según tu implementación
 }
 
@@ -212,3 +207,5 @@ function showAllImages(images) {
     photos.appendChild(imgElement);
   });
 }
+
+//prueba commit

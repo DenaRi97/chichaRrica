@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-  <link rel="icon" sizes="16x16 32x32 48x48" type="image/svg" href="./img/favicon.svg" />
+  <link rel="icon" sizes="16x16 32x32 48x48" type="image/svg" href="../img/favicon.svg" />
   <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="../css/normalize.css">
   <link rel="stylesheet" href="../css/register.css">
@@ -75,7 +75,7 @@
         </div>               
         <div class="form-group">
           <label>
-            <input class="control" id="email" name="email" placeholder="Correo" required autocomplete="off">
+            <input class="control" id="correo" name="correo" placeholder="Correo" required autocomplete="off">
           </label>
           <span id="errorEmail" class="error"></span>
         </div>
@@ -106,9 +106,15 @@
   <div id="myModal" class="modal">
     <div class="modal-content">
       <span class="close" onclick="cerrarModal()">&times;</span>
-      <p>¡Muchas gracias por registrarse!</p>
-      <a href="../templates/gallery.html"><button onclick="galeria()">Galeria</button></a>
+      <p>¡Muchas gracias por registrarte!</p>
+      <a href="../templates/gallery.html"><button id="redd__galeria" onclick="galeria()">Galeria</button></a>
     </div>
+  </div>
+
+
+  <div id="myModal" class="modal">
+    <!-- Modal content goes here -->
+    <span class="close" onclick="cerrarModal()">&times;</span>
   </div>
 
   <script>
@@ -125,7 +131,6 @@
     function galeria() {
       window.location.href = "index.html"; // Reemplaza "index.html" con la URL de tu página de inicio
     }
-
   </script>
 
 
@@ -136,5 +141,6 @@
   </footer>
   <script src="../js/scripJS.js"></script>
   <script src="../js/register.js"></script>
+  <script src="../js/scripJS.js"></script>
 </body>
 </html>

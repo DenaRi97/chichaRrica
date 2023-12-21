@@ -152,20 +152,31 @@ img .logo-user{
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
   }
+  .modal p{
+    font-weight: 300;
+
+  }
   
   .modal-content {
     background-color: #fefefe;
-    margin: 15% auto;
-    padding: 20px;
+    margin: 28% auto;
+    padding: 70px;
     border: 1px solid #888;
-    width: 80%;
+    width: 26%;
     text-align: center;
+  }
+  #redd__galeria{
+    background-color: #980101;
+    color:white;
+    padding: 3% 7% 3% 7%;
+    border: #980101;
+    border-radius: 5rem;
   }
   
   .close {
     color: #aaa;
-    float: right;
-    font-size: 28px;
+    float: inline-end;
+    font-size: 30px;
     font-weight: bold;
   }
   
