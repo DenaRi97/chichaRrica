@@ -8,7 +8,8 @@ document.addEventListener('DOMContentLoaded', function () {
 		event.preventDefault();
 	  } else {
 		// Si las validaciones son exitosas, redirigimos al usuario a gallery.html
-		window.location.href = '../templates/gallery.html';
+		// window.location.href = '../templates/gallery.html';
+		mostrarModal()
 	  }
 	});
   
@@ -56,3 +57,18 @@ document.addEventListener('DOMContentLoaded', function () {
 		return true;
 	  }
   });
+
+ //Modal
+    function mostrarModal() {
+      var modal = document.getElementById('modal__gracias');
+      modal.style.display = 'block';
+    }
+
+    function cerrarModal() {
+      var modal = document.getElementById('modal__gracias');
+      modal.style.display = 'none';
+    }
+
+    function galeria() {
+      window.location.href = "index.html"; 
+    }

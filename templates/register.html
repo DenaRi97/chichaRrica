@@ -66,7 +66,7 @@
   <main class="contacto">
     <section class="formulario">               
       <h4>Crear Cuenta</h4>
-      <form action="../templates/gallery.html" method="post" id="registrationForm">
+      <form action="#" method="post" id="registrationForm">
         <div class="form-group">
           <label>
             <input class="control" id="nombre" name="nombre" placeholder="Nombre" required autocomplete="off">
@@ -97,6 +97,20 @@
     </section>
   </main>
 
+<!-- Agrega esto después de tu formulario -->
+  <div id="modal__gracias" class="modal__thanks">
+    <div class="modal__graciasContent">
+      <!-- <span class="close" onclick="cerrarModal()">&times;</span> -->
+      <p>¡Muchas gracias por registrarte!</p>
+      <a href="../templates/gallery.html"><button id="redd__galeria" onclick="galeria()">Galeria</button></a>
+    </div>
+  </div>
+
+  <div id="modal__gracias" class="modal__thanks">
+    <!-- Modal content goes here -->
+    <!-- <span class="close" onclick="cerrarModal()">&times;</span> -->
+  </div>
+ 
   <footer>
     <img src="../img/iconos/logoPlanoBlanco.svg" alt="Logotipo Miguel Meixoeiro">
   </footer>
