@@ -160,40 +160,38 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-//Ajustar altura de forma automatica----------------------------------------------------------------------------
- 
+// Ajustar altura de forma automática --------------------------------------------------------
+
 // Guarda la altura original al cargar la página
 const alturaOriginal = document.querySelector('.gallery__fotos').offsetHeight;
 
 // Función para ajustar la altura de las imágenes
 function ajustarAltura() {
-    const galeria = document.querySelector('.gallery__fotos');
-    
-    // Lógica para ajustar la altura según la subcategoría o filtro aplicado
-    // Puedes adaptar esto según cómo obtienes y aplicas los datos de la API
-    // Aquí un ejemplo básico:
-    const subcategoriaSeleccionada = obtenerSubcategoriaSeleccionada(); // Implementa esta función
-    
-    if (subcategoriaSeleccionada) {
-        // Lógica para ajustar la altura según la subcategoría
-        galeria.style.columnCount = 2; // o el número que desees para la subcategoría
-    } else {
-        // Restablece a la altura original si no hay filtro
-        galeria.style.columnCount = 'auto';
-    }
+  const galeria = document.querySelector(".gallery__fotos");
+
+  // Lógica para ajustar la altura según la subcategoría o filtro aplicado
+  // Puedes adaptar esto según cómo obtienes y aplicas los datos de la API
+  // Aquí un ejemplo básico:
+  const subcategoriaSeleccionada = obtenerSubcategoriaSeleccionada(); // Implementa esta función
+
+  if (subcategoriaSeleccionada) {
+    // Lógica para ajustar la altura según la subcategoría
+    galeria.style.columnCount = 2; // o el número que desees para la subcategoría
+  } else {
+    // Restablece a la altura original si no hay filtro
+    galeria.style.columnCount = "auto";
+  }
 }
 
 // Llama a la función al cargar la página y cuando se aplique el filtro
-document.addEventListener('DOMContentLoaded', ajustarAltura);
-document.addEventListener('cambioFiltro', ajustarAltura); // Escucha un evento personalizado o ajusta según cómo aplicas los filtros
-
-  
+document.addEventListener("DOMContentLoaded", ajustarAltura);
+document.addEventListener("cambioFiltro", ajustarAltura); // Escucha un evento personalizado o ajusta según cómo aplicas los filtros
 
 // Función ficticia para obtener la subcategoría seleccionada
 function obtenerSubcategoriaSeleccionada() {
   // Implementa la lógica necesaria para obtener la subcategoría seleccionada
   // Puede depender de cómo has estructurado tu página y cómo obtienes la información de los filtros
-   
+
   return null; // Cambia esto según tu implementación
 }
 
