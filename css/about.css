@@ -1,4 +1,7 @@
 /*Contenedor principal*/
+body {
+    overflow: hidden;
+}
 .about__container{
     /* overflow-y: scroll; */
     height: 91.5vh;

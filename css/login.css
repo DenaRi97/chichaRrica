@@ -113,9 +113,19 @@ img .logo-user{
 }
 
 .form-group a{
-    text-decoration: none;
-    color: #ffffff;
-}
+    margin-top: 10px;
+    font-family: 'raleway', Helvetica, sans-serif;
+    font-size: 17px;
+    background: #8c0303;
+    color: #d9d9d9;
+    padding: 0px 3.9em;
+    display: flex;
+    align-items: center;
+    border: 1px solid #66da4300;
+    border-radius: 5em;
+    overflow: hidden;
+    transition: all 0.2s;
+    cursor: pointer;
 
 /* Media query para pantallas más pequeñas */
 @media screen and (max-width: 1000px) {
