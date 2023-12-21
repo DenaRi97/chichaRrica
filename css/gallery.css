@@ -41,19 +41,14 @@ header ul{
   display: flex;
   align-items: center;
   justify-content: center;
-
-
 }
 
 
 .gallery__buttonCategory:hover{
   font-weight: bolder;
   border: white solid 2px;
-
   display: flex;
   align-items: center;
-
-
 }
 
 .gallery_filtersSubCategory{
@@ -79,8 +74,6 @@ display: none;
 
 .gallery__buttonSubCategory:hover{
     font-weight: bolder;
-    border: white solid 2px;
-    
     display: flex;
     align-items: center; 
 }
@@ -243,14 +236,31 @@ color: #ddd;
   gap: 30px;
 
 }
+#main-header{
+  height: 74px;
+}
+
 }
 
 @media only screen and (max-width:660px) {
+
 .gallery_filtersSubCategory {
   display: flex;
-  margin: auto;
-  gap: 0px;
+  gap: 3px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: center;
+  align-items: stretch;
+  margin: 13px;
+  justify-content: center;
+  padding: 4%;
+}
+.gallery__buttonSubCategory {
+  padding: 0 3% 1% 3%;
+}
 
+.gallery__buttonSubCategory {
+  font-size: 1em;
 }
 }
 
