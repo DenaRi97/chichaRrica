@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-  <link rel="icon" sizes="16x16 32x32 48x48" type="image/svg" href="../img/favicon.svg" />
+  <link rel="icon" sizes="16x16 32x32 48x48" type="image/svg" href="../img/iconos/favicon.svg" />
   <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="../css/normalize.css">
   <link rel="stylesheet" href="../css/register.css">
@@ -39,7 +39,7 @@
     <!-- slide rojo que aparece cuando clickamos en ACCESO -->
     <section class="sliderLateral" id="sliderLateralContainer">
 
-      <img src="../img/logoBlanco.svg" alt="Logotipo Miguel Meixoeiro" class="logoSlideBlanco">
+      <img src="../img/iconos/logoBlanco.svg" alt="Logotipo Miguel Meixoeiro" class="logoSlideBlanco">
 
       <section class="slider__formulario">
         <form class="form">
@@ -66,7 +66,8 @@
   <main class="contacto">
     <section class="formulario">               
       <h4>Crear Cuenta</h4>
-      <form action="#" method="post">                 
+      <form action="../templates/gallery.html" class="form" method="post" id="registrationForm">
+      <form action="#" method="post" id="registrationForm">
         <div class="form-group">
           <label>
             <input class="control" id="nombre" name="nombre" placeholder="Nombre" required autocomplete="off">
@@ -82,28 +83,35 @@
         <div class="form-group">
           <label>
             <input class="control" id="password" name="password" type="password" placeholder="Contraseña" required autocomplete="off"> 
+            <section class="botons">
+              <div class="form-group ">
+                <label>
+                  <button class="button" type="submit" onclick="return validateForm()">Registro</button>
+                  <a class="button__register" href="./login.html" target="_self" >Iniciar Sesión</a>
+                </label>
+              </div>
+            </section>
           </label>
           <span id="errorPassword" class="error"></span>
         </div>  
-
-      <section class="botons">
-        <div class="form-group">
-          <label>            
-            <button class="button" type="submit" onclick="mostrarModal()">Registro</button>
-          </label>
-        </div>
-        <div class="form-group">
-          <label>
-            <a class="button" href="login.html" target="_self" >Iniciar Sesión</a>
-          </label>
-        </div>
-      </section>
       </form>
     </section>
   </main>
 
-  </main>
+<!-- Agrega esto después de tu formulario -->
+  <div id="modal__gracias" class="modal__thanks">
+    <div class="modal__graciasContent">
+      <!-- <span class="close" onclick="cerrarModal()">&times;</span> -->
+      <p>¡Muchas gracias por registrarte!</p>
+      <a href="../templates/gallery.html"><button id="redd__galeria" onclick="galeria()">Galeria</button></a>
+    </div>
+  </div>
 
+  <div id="modal__gracias" class="modal__thanks">
+    <!-- Modal content goes here -->
+    <!-- <span class="close" onclick="cerrarModal()">&times;</span> -->
+  </div>
+ 
   <footer>
     <img src="../img/iconos/logoPlanoBlanco.svg" alt="Logotipo Miguel Meixoeiro">
   </footer>

@@ -7,7 +7,7 @@
   <link rel="icon" sizes="16x16 32x32 48x48" type="image/svg" href="./img/favicon.svg" />
   <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="../css/normalize.css">
-  <link rel="stylesheet" href="../css/login.css">
+  <link rel="stylesheet" href="../css/register.css">
   <title>Miguel Meixoeiro</title>
 </head>
 <body class="no-scroll">
@@ -66,7 +66,7 @@
     <main class="contacto">
         <section class="formulario">               
         <h4>Iniciar sesión</h4>
-        <form action="#" method="post">                 
+        <form action="#" class="form" method="post">                 
             <div class="form-group">
             <label>
                 <input class="control" id="email" name="email" placeholder="Correo" required autocomplete="off">
@@ -80,16 +80,13 @@
             </div>  
 
           <section class="botons" >
-            <div class="form-group">
-              <label>            
-                  <input class="button" type="submit" value="Iniciar">
-              </label>
+            <div class="center">
+              <button type="submit" class="button">Iniciar</button>
             </div>
-            <div class="form-group">
-              <label>
-                <a class="button" href="register.html" target="_self"><p>Crear Cuenta</p></a>
-              </label>
-            </div>
+            <div class="center">
+              <button type="button" class="button__register" onclick="redirigirARegister()">Crear Cuenta</button>
+          </div>
+          </div>
           </section>
         </form>
         </section>

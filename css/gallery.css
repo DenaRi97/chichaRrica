@@ -116,14 +116,16 @@ header ul {
 
 }
 
-.gallery_filtersSubCategory {
-  display: flex;
-  margin: auto;
-  gap: 30px;
-  height: 10%;
-  background-color: #830c0c;
-  padding: 1%;
-  border-radius: 43px;
+.gallery_filtersSubCategory{
+display: flex;
+align-items: center;
+margin: auto;
+gap: 30px;
+height: 10%;
+background-color: #830c0c;
+padding: 1%;
+border-radius: 43px;
+transition: cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .gallery__buttonSubCategory {
@@ -284,14 +286,6 @@ color: #ddd;
 
 
 /*Media queries*/
-@media only screen and (max-width:900px) {
-.gallery_filtersSubCategory {
-  display: flex;
-  margin: auto;
-  gap: 30px;
-
-  }
-}
 
 @media only screen and (max-width:660px) {
   .gallery_filtersSubCategory {
@@ -419,6 +413,7 @@ color: #ddd;
 
 
 /*Media queries*/
+
 @media only screen and (max-width:1000px){
   .gallery__fotos {
       column-count: 2;
@@ -440,6 +435,24 @@ color: #ddd;
       gap: 10px; /* Espacios entre fotos */
 }
 
+.modal-info {
+  display: flex;
+  color: #fff;
+  flex-direction: column;
+  width: 92%;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+.modal-content {
+  display: flex;
+  width: auto;
+  max-height: 27%;
+}
+.modal__section {
+  /* display: flex; */
+  /* justify-content: space-around; */
+}
+
 }
 
 @media only screen and (max-width:840px){
@@ -448,14 +461,7 @@ color: #ddd;
     }
 }
 
-@media only screen and (max-width:900px) {
-.gallery_filtersSubCategory {
-  display: flex;
-  margin: auto;
-  gap: 30px;
 
-}
-}
 
 @media only screen and (max-width:660px){
   .gallery_filtersSubCategory{
@@ -464,14 +470,7 @@ color: #ddd;
       gap: 0px;
 
 }}
-@media only screen and (max-width:660px) {
-.gallery_filtersSubCategory {
-  display: flex;
-  margin: auto;
-  gap: 0px;
 
-}
-}
 
 @media only screen and (max-width:540px){
   .gallery_filtersSubCategory{
@@ -483,16 +482,7 @@ color: #ddd;
 
 }}
 
-@media only screen and (max-width:540px) {
-.gallery_filtersSubCategory {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin: auto;
-  gap: 0px;
 
-}
-}
 .white-icon {
   color: #ffffff; 
 }

@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="icon" sizes="16x16 32x32 48x48" type="image/svg" href="./img/favicon.svg" />
+  <link rel="stylesheet" href="../css/about.css">
+  <link rel="stylesheet" href="../css/normalize.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/">
+
+  <title>About</title>
+</head>
+<body>
+  <header id="main-header">
+    <div class="menu__icon">
+      <i class="fas fa-bars icon"></i>
+    </div>
+ 
+    <!--Burger Menú-->
+    <input class="menu__btn" type="checkbox" id="menu__btn" />
+    <label class="menu__icon" for="menu__btn"><span class="navicon"></span> </label>  
+    <!--Menú-->
+
+  <nav>
+    <a href="../index.html" class="nav__logo logo">
+    <img id="logoPrincipal" src="../img/iconos/logoBlanco.svg" alt="Logotipo Miguel Meixoeiro" class="hide-logo">
+    </a>
+    <ul>
+      <li><a href="./register.html">ACCESO</a></li>
+      <li><a href="./about.html">ABOUT</a></li>
+      <li><a href="../templates/gallery.html">GALERIA</a></li>
+      <li><a href="../templates/carrodef.html"><i class="bi bi-cart-fill"></i></a></li>
+    </ul>
+  </nav>
+  </header>
+    <!-- <section class="container">
+        <div class="products">
+            <div class="carts">
+                <div>
+                    <img src="./img/imagen001.jpg" alt="">
+                    <p><span>10</span>€ </p>
+                </div>
+                <p class="title">Foto Hombre</p>
+                <a href="" data-id="1" class="btn-add-cart">add to cart</a>
+            </div>
+            <div class="carts">
+                <div>
+                    <img src="./img/imagen002.jpg" alt="">
+                    <p><span>10</span>€</p>
+                </div>
+                <p class="title">Arbol</p>
+                <a href="" class="btn-add-cart" data-id="2">add to cart</a>
+            </div>
+            <div class="carts">
+                <div>
+                    <img src="./img/imagen003.jpg" alt="">
+                    <p><span>15</span>€</p>
+                </div>
+                <p class="title">Mujer fumando</p>
+                <a href="" data-id="3" class="btn-add-cart">add to cart</a>
+            </div>
+            <div class="carts">
+                <div>
+                    <img src="./img/imagen004.jpg" alt="">
+                    <p><span>10</span>€ </p>
+                </div>
+                <p class="title">Humo blanco</p>
+                <a href="" data-id="4" class="btn-add-cart">add to cart</a>
+            </div>
+            <div class="carts">
+                <div>
+                    <img src="./img/imagen005.jpg" alt="">
+                    <p><span>15</span>€ </p>
+                </div>
+                <p class="title">Planta</p>
+                <a href="" data-id="5" class="btn-add-cart">add to cart</a>
+            </div>
+            <div class="carts">
+                <div>
+                    <img src="./img/imagen006.jpg" alt="">
+                    <p><span>10</span>€</p>
+                </div>
+                <p class="title">Mujer</p>
+                <a href="" data-id="6" class="btn-add-cart">add to cart</a>
+            </div>
+            <div class="carts">
+                <div>
+                    <img src="./img/imagen007.jpg" alt="">
+                    <p><span>15</span>€</p>
+                </div>
+                <p class="title">Humo</p>
+                <a href="" data-id="7" class="btn-add-cart">add to cart</a>
+            </div>
+            <div class="carts">
+                <div>
+                    <img src="./img/imagen008.jpg" alt="">
+                    <p><span>10</span>€</p>
+                </div>
+                <p class="title">Manos soga</p>
+                <a href="" data-id="8" class="btn-add-cart">add to cart</a>
+            </div>
+            <div class="carts">
+                <div>
+                    <img src="./img/imagen009.jpg" alt="">
+                    <p><span>15</span>€</p>
+                </div>
+                <p class="title">Mujer vendaje</p>
+                <a href="" data-id="9" class="btn-add-cart">add to cart</a>
+            </div>
+            <div class="carts">
+                <div>
+                    <img src="./img/imagen010.jpg" alt="">
+                    <p><span>15</span>€</p>
+                </div>
+                <p class="title">Personas</p>
+                <a href="" data-id="10" class="btn-add-cart">add to cart</a>
+            </div>
+            <div class="carts">
+                <div>
+                    <img src="./img/imagen011.jpg" alt="">
+                    <p><span>10</span>€</p>
+                </div>
+                <p class="title">Escalera</p>
+                <a href="" data-id="11" class="btn-add-cart">add to cart</a>
+            </div>
+        </div>
+        <div class="carts">
+            <div>
+                <img src="./img/imagen012.jpg" alt="">
+                <p><span>15</span>€</p>
+            </div>
+            <p class="title">Craneo</p>
+            <a href="" data-id="12" class="btn-add-cart">add to cart</a>
+        </div>
+        <div class="carts">
+            <div>
+                <img src="./img/imagen013.jpg" alt="">
+                <p><span>10</span>€</p>
+            </div>
+            <p class="title">Mujer</p>
+            <a href="" data-id="13" class="btn-add-cart">add to cart</a>
+        </div>
+        <div class="carts">
+            <div>
+                <img src="./img/imagen014.jpg" alt="">
+                <p><span>10</span>€</p>
+            </div>
+            <p class="title">Arbol</p>
+            <a href="" data-id="14" class="btn-add-cart">add to cart</a>
+        </div>
+        <div class="carts">
+            <div>
+                <img src="./img/imagen015.jpg" alt="">
+                <p><span>10</span>$</p>
+            </div>
+            <p class="title">Iglesia</p>
+            <a href="" data-id="15" class="btn-add-cart">add to cart</a>
+        </div>
+        <div class="carts">
+            <div>
+                <img src="./img/imagen016.jpg" alt="">
+                <p><span>15</span>€</p>
+            </div>
+            <p class="title">Cruz</p>
+            <a href="" data-id="16" class="btn-add-cart">add to cart</a>
+        </div>
+        <div class="carts">
+            <div>
+                <img src="./img/imagen017.jpg" alt="">
+                <p><span>15</span>€</p>
+            </div>
+            <p class="title">Flor</p>
+            <a href="" data-id="17" class="btn-add-cart">add to cart</a>
+        </div>
+        <div class="carts">
+            <div>
+                <img src="./img/imagen018.jpg" alt="">
+                <p><span>15</span>€</p>
+            </div>
+            <p class="title">Perro</p>
+            <a href="" data-id="18" class="btn-add-cart">add to cart</a>
+        </div>
+        <div class="carts">
+            <div>
+                <img src="./img/imagen019.jpg" alt="">
+                <p><span>15</span>€</p> 
+            </div>
+            <p class="title">Mano</p>
+            <a href="" data-id="19" class="btn-add-cart">add to cart</a>
+        </div>
+        <div class="carts">
+            <div>
+                <img src="./img/imagen020.jpg" alt="">
+                <p><span>10</span>€</p>
+            </div>
+            <p class="title">Pintura</p>
+            <a href="" data-id="20" class="btn-add-cart">add to cart</a>
+        </div>
+        <div class="carts">
+            <div>
+                <img src="./img/imagen021.jpg" alt="">
+                <p><span>10</span>€</p>
+            </div>
+            <p class="title">Manos rojas</p>
+            <a href="" data-id="21" class="btn-add-cart">add to cart</a>
+        </div>
+        <div class="carts">
+            <div>
+                <img src="./img/imagen022.jpg" alt="">
+                <p><span>10</span>€</p>
+            </div>
+            <p class="title">Cielo</p>
+            <a href="" data-id="22" class="btn-add-cart">add to cart</a>
+        </div>
+        <div class="carts">
+            <div>
+                <img src="./img/imagen023.jpg" alt="">
+                <p><span>10</span>€</p>
+            </div>
+            <p class="title">Perro pug</p>
+            <a href="" data-id="23" class="btn-add-cart">add to cart</a>
+        </div>
+        <div class="carts">
+            <div>
+                <img src="./img/imagen024.jpg" alt="">
+                <p><span>15</span>€</p>
+            </div>
+            <p class="title">Gato negro</p>
+            <a href="" data-id="24" class="btn-add-cart">add to cart</a>
+        </div>
+        <div class="carts">
+            <div>
+                <img src="./img/imagen025.jpg" alt="">
+                <p><span>15</span>€</p>
+            </div>
+            <p class="title">Flor</p>
+            <a href="" data-id="25" class="btn-add-cart">add to cart</a>
+        </div>
+        <div class="carts">
+            <div>
+                <img src="./img/imagen026.jpg" alt="">
+                <p><span>15</span>€</p>
+            </div>
+            <p class="title">Escalera roja</p>
+            <a href="" data-id="26" class="btn-add-cart">add to cart</a>
+        </div>
+        <div class="carts">
+            <div>
+                <img src="./img/imagen027.jpg" alt="">
+                <p><span>10</span>€</p> 
+            </div>
+            <p class="title">Cielo</p>
+            <a href="" data-id="27" class="btn-add-cart">add to cart</a>
+        </div>
+        <div class="carts">
+            <div>
+                <img src="./img/imagen028.jpg" alt="">
+                <p><span>15</span>€</p>
+            </div>
+            <p class="title">Hipopotamos</p>
+            <a href="" data-id="28" class="btn-add-cart">add to cart</a>
+        </div>
+        <div class="carts">
+            <div>
+                <img src="./img/imagen029.jpg" alt="">
+                <p><span>10</span>€</p>
+            </div>
+            <p class="title">Señal</p>
+            <a href="" data-id="29" class="btn-add-cart">add to cart</a>
+        </div>
+        <div class="carts">
+            <div>
+                <img src="./img/imagen030.jpg" alt="">
+                <p><span>15</span>€</p>
+            </div>
+            <p class="title">Jirafa</p>
+            <a href="" data-id="30" class="btn-add-cart">add to cart</a>
+        </div>
+        <div class="carts">
+            <div>
+                <img src="./img/imagen031.jpg" alt="">
+                <p><span>10</span>€</p>
+            </div>
+            <p class="title">Pescador</p>
+            <a href="" data-id="31" class="btn-add-cart">add to cart</a>
+        </div>
+        
+    </section> -->
+
+    <script>
+        function showCart(x){
+            document.getElementById("products-id").style.display = "block";
+        }
+        function closeBtn(){
+             document.getElementById("products-id").style.display = "none";
+        }
+
+    </script>
+    <script src="./js/carritodef.js" ></script>
+    <script src="script/main.js"></script>
+
+</body>
+</html>
