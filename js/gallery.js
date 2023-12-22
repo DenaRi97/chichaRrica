@@ -204,4 +204,6 @@ function showAllImages(images) {
   });
 }
 
-//prueba commit
+//BOTON DE AÑADIR A CARRO
+
+function addToCart 
