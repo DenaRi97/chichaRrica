@@ -44,7 +44,7 @@ function showModal(item) {
   modal.style.display = "block";
   modalImage.src = item.url;
   modalTitle.innerHTML = `<h2>${item.title}</h2>`;
-  modalPrice.innerHTML = `<p>${item.price}</p>`;
+  // modalPrice.innerHTML = `<p>${item.price}</p>`;
   currentIndex = data.indexOf(item);
 
   // Oculta el nav con id "main-header"
@@ -56,7 +56,7 @@ function showModal(item) {
 const modal = document.getElementById("myModal");
 const modalImage = document.getElementById("modalImage");
 const modalTitle = document.getElementById("modalTitle");
-const modalPrice = document.getElementById("modalPrice");
+// const modalPrice = document.getElementById("modalPrice");
 const closeModal = document.querySelector(".close");
 
 // Manejador de clic en una imagen
@@ -71,7 +71,7 @@ photos.addEventListener("click", function (event) {
     const selectedData = data[dataIndex];
 
     modalTitle.innerHTML = `<h2>${selectedData.title}</h2>`;
-    modalPrice.innerHTML = `<p>${selectedData.price}</p>`;
+    // modalPrice.innerHTML = `<p>${selectedData.price}</p>`;
     currentIndex = dataIndex;
   }
 });
@@ -206,6 +206,3 @@ function showAllImages(images) {
   });
 }
 
-//BOTON DE AÑADIR A CARRO
-
-function addToCart 

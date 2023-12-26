@@ -71,6 +71,13 @@
                 <span class="next">&#10095;</span>
             </div>
             <section class="modal__section">
+                <li>
+                    <a href="#" onclick="showCartInModal()">
+                        <i class="bi bi-cart-fill carrito__modal"></i>
+                        <span class="cart__count">0</span> <!-- Esto debería mostrar la cantidad de elementos en el carrito -->
+                    </a>
+                </li>
+                
                 <span class="close">&times;</span>
 
                 <div class="modal-info">
@@ -78,20 +85,35 @@
                     <section class="modal__info-justify">
                         <h2 id="modalTitle"></h2>
                         <p id="modalPrice"></p>
+                        <p>Escoge el tamaño de tu impresión:</p>
+                        
+                        <select id="tamanioSelect">
+                            <option value="grande">Grande 4 x 6 mts</option>
+                            <option value="mediano">Mediano 3 X 4 mts.</option>
+                            <option value="pequeno">Pequeño 2 X 3 mts</option>
+                          </select>
                                   
                         <div class="center">
                             <button class="button" id="addToCart__button" onclick="addToCart()" >AÑADIR</button>
                         </div>
                     </section>
                 </div>
-
             </section>
         </div>
+        <!-- Agrega esta sección al final de tu HTML antes de cerrar el body -->
+        <div id="cartModal" class="modal">
+            <span class="close" onclick="closeCartModal()">&times;</span>
+            <h2>Carrito de Compras</h2>
+            <div id="cartItems" class="cart-items"></div>
+            <!-- Agrega estos elementos en tu modal del carrito -->
+            <p>Cantidad de artículos en el carrito: <span id="cartCantidad">0</span></p>
+            <p>Monto total en el carrito: $<span id="cartTotal">0.00</span></p>
+
+        </div>
+
     </main>
     <script src="../js/gallery.js"></script>
-    <script src="../js/carrodef.js"></script>
-    <script src="script/main.js"></script>
-
+    <script src="../js/carroGallery.js"></script>
+    <script src="../js/scripJS.js"></script>   
 </body>
-
 </html>

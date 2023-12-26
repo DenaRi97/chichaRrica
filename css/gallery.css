@@ -411,6 +411,38 @@ color: #ddd;
 
 }
 
+/* Estilos para el contenedor del carrito */
+.cart-items {
+  display:flex;
+  max-width:  300px; /* Ajusta según sea necesario */
+
+}
+
+
+/* Opcional: Estilos para el icono del carrito cuando está activo */
+.cart__icon--active {
+  color: #ff4500; /* Cambia a tu color preferido */
+}
+
+.carrito__modal{
+  color: #f2f2f2;
+  font-weight: 900;
+}
+.cart__count{
+  color:#ff4500;
+  font-weight: 700;
+  text-decoration : none;
+}
+
+.cart__item{
+  color: #f2f2f2;
+  border-bottom: 1px solid #ddd;
+  padding: 10px;
+}
+
+.total-container{
+  color:#f1f1f1;
+}
 
 /*Media queries*/
 
