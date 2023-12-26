@@ -44,7 +44,7 @@ function showModal(item) {
   modal.style.display = "block";
   modalImage.src = item.url;
   modalTitle.innerHTML = `<h2>${item.title}</h2>`;
-  // modalPrice.innerHTML = `<p>${item.price}</p>`;
+  modalPrice.innerHTML = `<p>${item.price}</p>`;
   currentIndex = data.indexOf(item);
 
   // Oculta el nav con id "main-header"

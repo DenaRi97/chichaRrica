@@ -195,7 +195,7 @@ cursor: pointer;
 
 border-radius: 0.1em;
 padding: 5px;
-transition: all .3s
+transition: all .3s;
 }
 
 /* CLASES MODAL */
@@ -215,6 +215,32 @@ background-color: rgb(0, 0, 0);
 background-color: rgba(0, 0, 0, 0.9);
 }
 
+#cartModal{
+  background-color: #000;
+  
+}
+
+#cartModal h2,p{
+  color: #fff;
+  text-align: center;
+  
+}
+
+.item-info{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.item-info input{
+  width: 20%;
+  background-color: #262726;
+  border: 1px solid #ffffff;
+  border-radius: 5%;
+  color: #fff;
+  text-align: center;
+}
+
 #modalTitle {
 font-family: 'raleway', Helvetica, sans-serif;
 font-size: 24px;
@@ -222,21 +248,30 @@ margin-bottom: 10px;
 }
 
 #modalPrice {
-font-family: 'raleway', Helvetica, sans-serif;
-font-size: 78px;
-color: #ffd700;
-max-height: 14vh;
+  font-family: 'raleway', Helvetica, sans-serif;
+  font-size: 50px;
+  color: #d23939;
+  max-height: 14vh;
+  margin-top: 90px;
+  cursor: pointer;
+}
+
+#modalPrice:hover{
+  font-weight: bold;
+  transition: all .3s;
 }
 
 .modal-info {
 display: flex;
 color: #fff;
+
+column-gap: 83px;
 }
 
 .modal-content {
 display: flex;
 max-width: 43vw;
-max-height: 56vh;
+max-height: 70vh;
 }
 
 .modal__section {
@@ -245,14 +280,45 @@ justify-content: space-around;
 
 }
 
+.cart__icon__showModal{
+  display: flex;
+ 
+  padding: 2em;
+  gap: 2.5em;
+}
+
 .modal__info-justify {
-display: flex;
-flex-direction: column;
-justify-content: space-evenly;
-align-items: flex-end;
-min-width: 28vw;
-height: 74vh;
-margin-top:-7%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  min-width: 28vw;
+  height: 74vh;
+  margin-top: -7%;
+}
+
+.modal__info__p{
+  margin-top: -180px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#tamanioSelect{
+  color: #fff;
+  font-weight: 500;
+  background-color: #262726;
+}
+
+option{
+  background-color: #262726;
+  color: #fff;
+}
+
+option:hover{
+  background-color: #fff;
+  color: #830c0c;
 }
 
 .close {
@@ -427,15 +493,20 @@ color: #ddd;
 .carrito__modal{
   color: #f2f2f2;
   font-weight: 900;
+  font-size: 2em;
+  cursor: pointer;
+  
 }
 .cart__count{
   color:#ff4500;
   font-weight: 700;
-  text-decoration : none;
+  
+  font-size: 2em;
+  text-decoration: none !important;
 }
 
 .cart__item{
-  color: #f2f2f2;
+  color: inherit;
   border-bottom: 1px solid #ddd;
   padding: 10px;
 }

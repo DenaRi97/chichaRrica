@@ -31,6 +31,7 @@ function updateCartIcon() {
   carritoIcon.classList.add("cart__icon--active");
 }
 
+
 // Función para mostrar el carrito en el modal
 function showCartInModal() {
     const cartItemsContainer = document.getElementById("cartItems");
@@ -95,6 +96,7 @@ function showCartInModal() {
   
     // Añadir botón para vaciar el carrito
     const clearCartButton = document.createElement("button");
+    clearCartButton.classList.add("vaciarCarrito")
     clearCartButton.classList.add("button");
     clearCartButton.textContent = "Vaciar Carrito";
     clearCartButton.addEventListener("click", clearCart);
@@ -103,7 +105,7 @@ function showCartInModal() {
     // Añadir elemento para mostrar el total
     const totalContainer = document.createElement("div");
     totalContainer.classList.add("total-container");
-    totalContainer.innerHTML = `<p>Total: $<span id='cartTotal'>${getCartTotal()}</span></p>`;
+    totalContainer.innerHTML = `<p>Total: <span id='cartTotal'>${getCartTotal()}€</span></p>`;
     cartItemsContainer.appendChild(totalContainer);
   
     // Muestra el modal del carrito
