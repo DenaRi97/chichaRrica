@@ -515,6 +515,14 @@ color: #ddd;
   color:#f1f1f1;
 }
 
+nav .cart__count{
+font-size: smaller;
+}
+
+.carrito__justify--align{
+  margin-left: -55px;
+}
+
 /*Media queries*/
 
 @media only screen and (max-width:1000px){

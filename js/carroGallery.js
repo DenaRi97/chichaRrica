@@ -6,6 +6,12 @@ const carritoCantidad = document.querySelector(".cart__count");
 // Inicializar el carrito desde el localStorage
 let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
+// Al cargar la página, actualiza la cantidad del carrito
+document.addEventListener("DOMContentLoaded", () => {
+  updateCartIcon();
+  showCartInModal();
+});
+
 // Función para añadir un producto al carrito
 function addToCart() {
   const selectedData = data[currentIndex];
@@ -38,6 +44,15 @@ function showCartInModal() {
   
     // Limpia el contenido actual
     cartItemsContainer.innerHTML = "";
+
+    //quitar el nav cuando aparezca el modal
+    let navElement = document.querySelector("nav");
+  
+    if (navElement) {
+      navElement.style.display = "none";
+      console.log("Condición cumplida: <nav> oculto");
+    }
+  
   
     // Crea elementos para cada producto en el carrito y añádelos al contenedor
     carrito.forEach((item) => {
@@ -140,6 +155,12 @@ carritoIcon.addEventListener("click", showCartInModal);
 function closeCartModal() {
   const cartModal = document.getElementById("cartModal");
   cartModal.style.display = "none";
+
+  let navElement = document.querySelector("nav")
+
+  if (navElement) {
+    navElement.style.display = "flex";
+  }
 }
 
 // Función para actualizar el localStorage con el contenido actual del carrito
