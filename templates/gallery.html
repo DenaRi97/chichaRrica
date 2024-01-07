@@ -34,8 +34,9 @@
                 <li><a href="./login.html">ACCESO</a></li>
                 <li><a href="./gallery.html">GALERIA</a></li>
                 <li><a href="./about.html">ABOUT</a></li>
-                <li ><a href="#" ><i class="bi bi-cart-fill"></i></a></li>
-                <li class="carrito__justify--align"><a href="#" onclick="showCartInModal()"><span class="cart__count">0</span></a></li>
+                <li><a href="#"><i class="bi bi-cart-fill"></i></a></li>
+                <li class="carrito__justify--align"><a href="#" onclick="showCartInModal()">
+                    <span class="cart__count">0</span></a></li>
             </ul>
         </nav>
     </header>
@@ -47,24 +48,26 @@
                 <span class="btn-txt">CATEGORIAS</span>
             </a>
             <div class="gallery_filtersSubCategory">
-                <button class="gallery__buttonSubCategory buttonSubCategory" data-keyword="personas"><a href="#">PERSONAS</a></button>
+                <button class="gallery__buttonSubCategory buttonSubCategory" data-keyword="personas"><a
+                        href="#">PERSONAS</a></button>
 
-                <button class="gallery__buttonSubCategory buttonSubCategory"
-                    data-keyword="naturaleza"><a href="#">NATURALEZA</a></button>
+                <button class="gallery__buttonSubCategory buttonSubCategory" data-keyword="naturaleza"><a
+                        href="#">NATURALEZA</a></button>
 
-                <button class="gallery__buttonSubCategory buttonSubCategory" data-keyword="efectos"><a href="#">EFECTOS</a></button>
+                <button class="gallery__buttonSubCategory buttonSubCategory" data-keyword="efectos"><a
+                        href="#">EFECTOS</a></button>
 
-                <button class="gallery__buttonSubCategory buttonSubCategory"
-                    data-keyword="arquitectura urbana"><a href="#">ARQUITECTURA URBANA</a></button>
+                <button class="gallery__buttonSubCategory buttonSubCategory" data-keyword="arquitectura urbana"><a
+                        href="#">ARQUITECTURA URBANA</a></button>
 
-                <button class="gallery__buttonSubCategory buttonSubCategory" data-keyword="animales"><a href="#">ANIMALES</a></button>
-                <button class="gallery__buttonSubCategory buttonSubCategory" data-keyword="animales"><a href="../templates/gallery.html">TODAS</a></button>
+                <button class="gallery__buttonSubCategory buttonSubCategory" data-keyword="animales"><a
+                        href="#">ANIMALES</a></button>
+                <button class="gallery__buttonSubCategory buttonSubCategory" data-keyword="animales"><a
+                        href="../templates/gallery.html">TODAS</a></button>
             </div>
         </div>
 
         <figure class="gallery__fotos"></figure> <!--aqui van las imagenes de la API-->
-
-
         <!-- Modal -->
         <div id="myModal" class="modal">
             <div class="pagination">
@@ -72,15 +75,14 @@
                 <span class="next">&#10095;</span>
             </div>
             <section class="modal__section">
+
                 <li>
                     <a class="cart__icon__showModal" href="#" onclick="showCartInModal()">
                         <i class="bi bi-cart-fill carrito__modal"></i>
-                        <span class="cart__count">0</span> <!-- Esto debería mostrar la cantidad de elementos en el carrito -->
+                        <span id="cartCantidad" class="cart__count">0</span></a></li>
                     </a>
                 </li>
-                
                 <span class="close">&times;</span>
-
                 <div class="modal-info">
                     <img src="" id="modalImage" class="modal-content">
                     <section class="modal__info-justify">
@@ -92,14 +94,10 @@
                                 <option value="grande">Grande 4 x 6 mts</option>
                                 <option value="mediano">Mediano 3 X 4 mts.</option>
                                 <option value="pequeno">Pequeño 2 X 3 mts</option>
-                              </select>
+                            </select>
                         </div>
-                       
-                        
-                        
-                                  
                         <div class="center">
-                            <button class="button" id="addToCart__button" onclick="addToCart()" >AÑADIR</button>
+                            <button class="button" id="addToCart__button" onclick="addToCart()">AÑADIR</button>
                         </div>
                     </section>
                 </div>
@@ -108,14 +106,16 @@
         <div id="cartModal" class="modal">
             <span class="close" onclick="closeCartModal()">&times;</span>
             <h2>Carrito de Compras</h2>
+            <div>
             <div id="cartItems" class="cart-items"></div>
-            <!-- <p>Cantidad de artículos en el carrito: <span id="cartCantidad">0</span></p> -->
-            <p>Cantidad total en el carrito: €<span id="cartTotal">0.00</span></p>
+                <!-- <p>Cantidad de artículos en el carrito: <span id="cartCantidad">0</span></p> -->
+            <!-- <p>Cantidad total en el carrito: €<span id="cartTotal">0.00</span></p> -->
+            </div>
         </div>
-
     </main>
     <script src="../js/gallery.js"></script>
     <script src="../js/carroGallery.js"></script>
-    <script src="../js/scripJS.js"></script>   
+    <script src="../js/scripJS.js"></script>
 </body>
+
 </html>

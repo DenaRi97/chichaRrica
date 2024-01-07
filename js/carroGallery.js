@@ -33,6 +33,11 @@ function addToCart() {
 function updateCartIcon() {
   carritoCantidad.textContent = carrito.length;
 
+    // Actualizar el contador en el modal
+    const cartCountModal = document.querySelector(".cart__count-modal");
+    if (cartCountModal) {
+      cartCountModal.textContent = carrito.length;
+    }
   // Puedes cambiar el aspecto del icono cuando hay elementos en el carrito
   carritoIcon.classList.add("cart__icon--active");
 }
@@ -40,93 +45,111 @@ function updateCartIcon() {
 
 // Función para mostrar el carrito en el modal
 function showCartInModal() {
-    const cartItemsContainer = document.getElementById("cartItems");
-  
-    // Limpia el contenido actual
-    cartItemsContainer.innerHTML = "";
+  const cartItemsContainer = document.getElementById("cartItems");
 
-    //quitar el nav cuando aparezca el modal
-    let navElement = document.querySelector("nav");
-  
-    if (navElement) {
+  // Limpia el contenido actual
+  cartItemsContainer.innerHTML = "";
+
+  //quitar el nav cuando aparezca el modal
+  let navElement = document.querySelector("nav");
+
+  if (navElement) {
       navElement.style.display = "none";
       console.log("Condición cumplida: <nav> oculto");
-    }
-  
-  
-    // Crea elementos para cada producto en el carrito y añádelos al contenedor
-    carrito.forEach((item) => {
+  }
+
+  // Crea elementos para cada producto en el carrito y añádelos al contenedor
+  carrito.forEach((item) => {
       const cartItem = document.createElement("div");
       cartItem.classList.add("cart__item");
-  
+
       // Agrega la miniatura de la imagen
       const itemImage = document.createElement("img");
       itemImage.src = item.url;
       itemImage.alt = item.title;
       cartItem.appendChild(itemImage);
-  
+
       const itemInfo = document.createElement("div");
       itemInfo.classList.add("item-info");
-  
+
       const itemName = document.createElement("p");
       itemName.textContent = item.title;
-  
+
       // Muestra el tamaño seleccionado en el carrito
       const itemSize = document.createElement("p");
       itemSize.textContent = `Tamaño: ${item.selectedSize}`;
       itemInfo.appendChild(itemSize);
-  
+
       // Agrega un campo de entrada para la cantidad
       const quantityInput = document.createElement("input");
       quantityInput.type = "number";
       quantityInput.value = getItemQuantity(item);
       quantityInput.min = 1;
       quantityInput.addEventListener("input", () => {
-        const enteredValue = parseInt(quantityInput.value, 10);
-        if (!isNaN(enteredValue) && enteredValue >= 1) {
-          item.quantity = enteredValue;
-          updateTotal();
-          updateLocalStorage();
-          showCartInModal(); // Actualiza la vista del modal al cambiar la cantidad
-        }
+          const enteredValue = parseInt(quantityInput.value, 10);
+          if (!isNaN(enteredValue) && enteredValue >= 1) {
+              item.quantity = enteredValue;
+              updateTotal();
+              updateLocalStorage();
+              showCartInModal(); // Actualiza la vista del modal al cambiar la cantidad
+          }
       });
       itemInfo.appendChild(quantityInput);
-  
+
       const itemPrice = document.createElement("p");
       itemPrice.textContent = calculatePrice(item, item.selectedSize);
-  
+
       itemInfo.appendChild(itemName);
       itemInfo.appendChild(itemPrice);
-  
+
       // Agrega un botón para eliminar el producto del carrito
       const deleteButton = document.createElement("button");
       deleteButton.classList.add("button");
       deleteButton.textContent = "Eliminar";
       deleteButton.addEventListener("click", () => removeItemFromCart(item));
       itemInfo.appendChild(deleteButton);
-  
+
       cartItem.appendChild(itemInfo);
       cartItemsContainer.appendChild(cartItem);
-    });
-  
-    // Añadir botón para vaciar el carrito
-    const clearCartButton = document.createElement("button");
-    clearCartButton.classList.add("vaciarCarrito")
-    clearCartButton.classList.add("button");
-    clearCartButton.textContent = "Vaciar Carrito";
-    clearCartButton.addEventListener("click", clearCart);
-    cartItemsContainer.appendChild(clearCartButton);
-  
-    // Añadir elemento para mostrar el total
-    const totalContainer = document.createElement("div");
-    totalContainer.classList.add("total-container");
-    totalContainer.innerHTML = `<p>Total: <span id='cartTotal'>${getCartTotal()}€</span></p>`;
-    cartItemsContainer.appendChild(totalContainer);
-  
-    // Muestra el modal del carrito
-    const cartModal = document.getElementById("cartModal");
-    cartModal.style.display = "block";
+  });
+
+  // Eliminar elementos antiguos del modal
+  const oldButtonsAndTotalContainer = document.querySelector(".buttons-and-total-container");
+  if (oldButtonsAndTotalContainer) {
+      oldButtonsAndTotalContainer.remove();
   }
+
+  // Añadir elemento para mostrar el total
+  const totalContainer = document.createElement("div");
+  totalContainer.classList.add("total-container");
+  totalContainer.innerHTML = `<p>Total: <span id='cartTotal'>${getCartTotal()}€</span></p>`;
+
+  // Añadir botón para vaciar el carrito
+  const clearCartButton = document.createElement("button");
+  clearCartButton.classList.add("vaciarCarrito");
+  clearCartButton.classList.add("button");
+  clearCartButton.textContent = "Vaciar Carrito";
+  clearCartButton.addEventListener("click", clearCart);
+
+  // Crear un nuevo contenedor para el botón y el total
+  const buttonsAndTotalContainer = document.createElement("div");
+  buttonsAndTotalContainer.classList.add("buttons-and-total-container");
+  buttonsAndTotalContainer.appendChild(clearCartButton);
+  buttonsAndTotalContainer.appendChild(totalContainer);
+
+  // Añadir el nuevo contenedor al modal después de cartItemsContainer
+  document.getElementById("cartModal").appendChild(cartItemsContainer);
+  document.getElementById("cartModal").appendChild(buttonsAndTotalContainer);
+
+   // Llama a updateCartIcon para actualizar la cantidad en el carrito
+   updateCartIcon();
+
+  // Muestra el modal del carrito
+  const cartModal = document.getElementById("cartModal");
+  cartModal.style.display = "block";
+}
+
+
   
   
   // Nueva función para obtener el total del carrito
@@ -180,7 +203,13 @@ function clearCart() {
 function updateTotal() {
   const totalElement = document.getElementById("cartTotal");
   const cantidadElement = document.getElementById("cartCantidad");
-
+  
+  const precios = {
+    "priceSmall": 70,
+    "priceMedium": 120,
+    "priceLarge": 210
+  };
+  
   let total = 0;
   let cantidad = 0;
 

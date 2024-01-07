@@ -44,13 +44,45 @@ function showModal(item) {
   modal.style.display = "block";
   modalImage.src = item.url;
   modalTitle.innerHTML = `<h2>${item.title}</h2>`;
-  modalPrice.innerHTML = `<p>${item.price}</p>`;
   currentIndex = data.indexOf(item);
 
   // Oculta el nav con id "main-header"
   const mainHeader = document.getElementById("main-header");
   mainHeader.style.display = "none";
+
+  // Obtener el elemento select del tamaño
+  const tamanioSelect = document.getElementById("tamanioSelect");
+
+  // Actualizar el precio mostrado según el tamaño seleccionado
+  updateModalPrice(item, tamanioSelect.value);
 }
+
+// Función para actualizar el precio mostrado en el modal según el tamaño seleccionado
+function updateModalPrice(item, selectedSize) {
+  // Obtener el elemento donde se mostrará el precio
+  const modalPrice = document.getElementById("modalPrice");
+
+  // Obtener el precio correspondiente al tamaño seleccionado
+  let selectedPrice;
+  switch (selectedSize) {
+    case "pequeno":
+      selectedPrice = item.priceSmall;
+      break;
+    case "mediano":
+      selectedPrice = item.priceMedium;
+      break;
+    case "grande":
+      selectedPrice = item.priceLarge;
+      break;
+    default:
+      selectedPrice = item.priceSmall; // Valor predeterminado si no se selecciona un tamaño válido
+      break;
+  }
+
+  // Mostrar el precio actualizado en el modal
+  modalPrice.innerHTML = `<p>${selectedPrice}€</p>`;
+}
+
 
 // Obtén referencias a los elementos del modal
 const modal = document.getElementById("myModal");
@@ -156,6 +188,11 @@ document.addEventListener("DOMContentLoaded", function () {
         .catch((error) => console.error("Houston tenemos un problema:", error));
     });
   });
+
+    // Añadir un evento change al selector de tamaño
+    tamanioSelect.addEventListener("change", function () {
+      updateModalPrice(data[currentIndex], this.value);
+    });
 });
 
 //Ajustar altura de forma automatica----------------------------------------------------------------------------
