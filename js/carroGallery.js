@@ -27,6 +27,7 @@ function addToCart() {
 
   // Actualizar la cantidad y el total en el carrito
   updateTotal();
+  
 }
 
 // Función para actualizar el icono y la cantidad en el carrito
